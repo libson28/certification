@@ -1,0 +1,15 @@
+button{
+  background-color: #001D3D;
+}
+button:hover{
+  background-color: #b09302;
+}
+
+.container{
+  margin-top: -3rem;
+}
+
+.banniere img{
+  width: 100%;
+  height: 30rem;
+}

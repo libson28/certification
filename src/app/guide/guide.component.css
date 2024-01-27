@@ -1,0 +1,109 @@
+.container{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Debut titre et icone diaman */
+.entete {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.entete p {
+  color: rgb(44, 44, 44);
+  margin-top: -5px;
+}
+
+.entete i {
+  color: #FB8500;
+  font-size: 1.2rem;
+  padding-bottom: 15px;
+}
+
+/* fin titre et icone diaman */
+
+
+/* premiere section */
+.img1
+{
+  display: flex;
+  justify-content: center;
+}
+
+.etape1{
+  display: grid;
+  grid-template-columns: 35% 40%;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 8rem;
+}
+
+.container h1{
+  text-align: center;
+  font-weight: 550;
+  color: #100b41;
+}
+
+.container p{
+  font-weight: 530;
+  font-size: 24px;
+}
+
+.etape4
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 7rem;
+}
+
+.open{
+  display: none;
+}
+
+.etape4 .texte{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.etape4 img{
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 950px){
+  .etape1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 7rem;
+    }
+
+    .imgCentrered img{
+      margin: 0 auto;
+    }
+    .txt p{
+      width: 80%;
+      margin: 0 auto;
+
+    }
+
+    .hide{
+      display: none;
+    }
+    .open{
+      display: block;
+    }
+}
+
+.entete p {
+  color: rgb(44, 44, 44);
+  margin-top: -5px;
+  font-size: 15px;
+}
+
+/* Banniere */
+.banner img {
+  width: 100%;
+}
+
+/* fin banniere */

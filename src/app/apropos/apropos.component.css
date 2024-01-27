@@ -1,0 +1,358 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Debut titre et icone diaman */
+.entete {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.entete p {
+  color: rgb(44, 44, 44);
+  margin-top: -5px;
+}
+
+.entete i {
+  color: #FB8500;
+  font-size: 1.2rem;
+  padding-bottom: 15px;
+}
+
+/* fin titre et icone diaman */
+
+
+/* dsecription */
+.two-bloc-txt {
+  display: grid;
+  grid-template-columns: 27% 27%;
+  gap: 6rem;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.two-bloc-txt p {
+  font-size: 18px;
+  font-weight: 535;
+
+}
+
+.bloc-txt1 {
+  /* background-color: aqua; */
+  height: 7rem;
+  margin-top: 3rem;
+}
+
+.bloc-txt2 {
+  /* background-color: rgb(21, 65, 65); */
+  height: 7rem;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .two-bloc-txt {
+    padding-bottom: 3rem;
+
+  }
+  }
+
+
+@media screen and (max-width: 860px) {
+  .two-bloc-txt {
+      display: grid;
+      grid-template-columns: 36% 36%;
+      gap: 6rem;
+      justify-content: center;
+      text-align: center;
+
+    }
+  }
+
+
+@media screen and (max-width: 1120px) {
+  .two-bloc-txt {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    gap: 6rem;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+    .my-rates {
+      margin-top: 3rem;
+    }
+  .my-image-between {
+    display: grid;
+    grid-template-columns: 85%;
+    justify-content: center;
+
+  }
+
+  .my-image-between img {
+    width: 100%;
+  }
+
+  .first {}
+}
+
+@media screen and (max-width: 794px) {
+  .two-bloc-txt {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 4rem;
+    justify-content: center;
+
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .two-bloc-txt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 10px;
+
+  }
+
+ .two-bloc-txt p {
+   padding: 0 10px;
+ }
+
+    .image img {
+      width: 100%;
+
+    }
+
+  .bloc-txt2{
+    margin-top: -5rem;
+    text-align: center;
+  }
+
+  .my-rates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+    margin-top: -20rem;
+  }
+}
+
+@media screen and (max-width: 521px) {
+  .two-bloc-txt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+
+
+  }
+}
+
+
+@media screen and (max-width: 414px) {
+  .two-bloc-txt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
+    justify-content: center;
+
+
+  }
+}
+
+.my-rates {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.my-rates p {
+
+  font-size: 1.08em;
+  font-weight: 700;
+}
+
+.my-rates .jaune {
+  color: #f89710;
+  font-size: 3em;
+}
+
+.my-rates .txt-between {
+  margin-top: -2rem;
+  font-size: 17px;
+  font-weight: 515;
+
+}
+
+.quiSommesNous{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.second{
+  border: 1px solid #000;
+  padding: 0 30px;
+  border-top: none;
+  border-bottom: none;
+}
+
+
+/* Image illustrative */
+.image{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.image img{
+  width: 55%;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+/* Section objectif */
+
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+    .design-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px 0;
+      font-family: Jost;
+      margin-top: 4rem;
+    }
+
+    .design {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline {
+      width: 80%;
+      height: auto;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background: #00223d;
+
+      border-radius: 5px;
+      color: white;
+      padding: 1.75rem;
+      transition: 0.4s ease;
+      overflow-wrap: break-word !important;
+      margin: 1rem;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    .timeline-component {
+      margin: 0px 20px 20px 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .timeline {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
+      }
+
+      .timeline-middle {
+        position: relative;
+        background-image: linear-gradient(45deg, #FB8500, #FB8500, #FB8500);
+        width: 3px;
+        height: 100%;
+      }
+
+      .main-middle {
+        opacity: 0;
+      }
+
+      .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, #00223d, #fff, #00223d);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
+    .objectif{
+        background-color: #f5f5f5;
+        margin-top: 4rem;
+        padding-top: 2rem;
+    }
+
+
+  /* Section Team */
+    .Team_Card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .Card_Team {
+      width: 320px;
+      height: 320px;
+      background-color: white;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 20px;
+    }
+
+    .Card_Team img {
+      display: block;
+      margin: auto;
+      padding-top: 3em;
+      border-radius: 50%;
+      width: 50%;
+    }
+
+    .Card_Team h6 {
+      margin-top: 10px;
+    }
+
+    .Card_Team h6,
+    .Card_Team p {
+      text-align: center;
+    }
+
+    .Team_Icone p {
+      text-align: center;
+    }
+
+    .Team_Icone p i {
+      margin-right: 10px;
+    }
+
+    .Card_Team hr {
+      width: 60%;
+      display: block;
+      margin: auto;
+      color: #D7B87B;
+      border: 2px solid #D7B87B;
+    }
+
+    .Container_Section_Team h3 {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }

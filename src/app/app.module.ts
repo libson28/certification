@@ -3,16 +3,49 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { FAQComponent } from './faq/faq.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { FooterComponent } from './footer/footer.component';
+import { EnteteComponent } from './entete/entete.component';
+import { ListeProfilComponent } from './liste-profil/liste-profil.component';
+import { EspaceOuvrierComponent } from './espace-ouvrier/espace-ouvrier.component';
+import { GuideComponent } from './guide/guide.component';
+import { ConditionUseComponent } from './condition-use/condition-use.component';
+import { PolitiqueConfiComponent } from './politique-confi/politique-confi.component';
+import { DashClientComponent } from './dash-client/dash-client.component';
+import { DashPrestataireComponent } from './dash-prestataire/dash-prestataire.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccueilComponent,
+    AproposComponent,
+    FAQComponent,
+    ConnexionComponent,
+    InscriptionComponent,
+    FooterComponent,
+    EnteteComponent,
+    ListeProfilComponent,
+    EspaceOuvrierComponent,
+    GuideComponent,
+    ConditionUseComponent,
+    PolitiqueConfiComponent,
+    DashClientComponent,
+    DashPrestataireComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

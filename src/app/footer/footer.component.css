@@ -1,0 +1,136 @@
+/* Debut Section Footer */
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #001D3D;
+  color: white;
+  margin-top: 250px;
+  bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Container_Footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* .Container_Footer .Container_card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 250px;
+  height: 250px;
+  padding: 5em;
+  position: relative;
+  top: -120px;
+  transform: rotate(-45deg);
+  color: black;
+} */
+
+.Container_card img {
+  /* transform: rotate(45deg); */
+  width: 250px;
+
+  margin-top: 4.5rem;
+  margin-left: 50px;
+  /* position: relative; */
+  /* top: -20px; */
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+.Container_card h6 {
+  transform: rotate(45deg);
+  text-align: justify;
+  position: relative;
+  left: -30px;
+  top: -25px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.Section_Newsletter_icone i {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+  color: black;
+  margin-right: 10px;
+}
+
+.footer_Menu {
+  padding-top: 4em;
+}
+
+.Container_Newsletters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Section_Newsletter_input input {
+  width: 420px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.Section_Newsletter_input button {
+  padding: 0.5em;
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+footer hr {
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.Copyright {
+  display: block;
+  margin: auto;
+  width: 300px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width:950px) {
+  .Container_Footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Container_Footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer_Menu a:hover {
+  color: darkorange;
+}
+
+::placeholder{
+  font-size: 11px;
+  font-family: 'Times New Roman', Times, serif;
+  color: gray;
+  padding-left: 12px;
+}
+
+@media screen and (max-width:535px) {
+  .Section_Newsletter_icone{
+     margin-top: -15px;
+    }
+}
+
+
+/* Fin Section Footer */
