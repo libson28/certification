@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -19,6 +18,11 @@ import { DashClientComponent } from './dash-client/dash-client.component';
 import { DashPrestataireComponent } from './dash-prestataire/dash-prestataire.component';
 
 import { FormsModule } from '@angular/forms';
+import { MainAdminComponent } from './main-admin/main-admin.component';
+import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
+import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
+import { StatistiqueComponent } from './statistique/statistique.component';
+import { SecurityComponent } from './security/security.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,11 @@ import { FormsModule } from '@angular/forms';
     PolitiqueConfiComponent,
     DashClientComponent,
     DashPrestataireComponent,
+    MainAdminComponent,
+    SidebarAdminComponent,
+    NavbarAdminComponent,
+    StatistiqueComponent,
+    SecurityComponent,
   ],
   imports: [
     BrowserModule,
