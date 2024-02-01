@@ -1,0 +1,13 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.dashbord {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.card{
+  width: 55%;
+}

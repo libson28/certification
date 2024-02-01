@@ -1,2 +1,14 @@
 <app-entete></app-entete>
+<div class="banner">
+  <img src="../../assets/liste-profil.png" alt="">
+</div>
 
+<!-- filtre par catégorie -->
+<div class="filtre">
+  <h2>Catégories:</h2>
+  <div class="categorie">
+    <ul>
+      <li *ngFor="let categorie of categories"><button>{{categorie.libelleCategorie}}</button></li>
+    </ul>
+  </div>
+</div>

@@ -18,11 +18,14 @@ import { DashClientComponent } from './dash-client/dash-client.component';
 import { DashPrestataireComponent } from './dash-prestataire/dash-prestataire.component';
 
 import { FormsModule } from '@angular/forms';
-import { MainAdminComponent } from './main-admin/main-admin.component';
-import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
-import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
-import { StatistiqueComponent } from './statistique/statistique.component';
-import { SecurityComponent } from './security/security.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpEvent } from '@angular/common/http';
+import { SidebarComponent } from './DASHBOARD-ADMIN/Sidebar/sidebar/sidebar.component';
+import { NavbarComponent } from './DASHBOARD-ADMIN/Navbar/navbar/navbar.component';
+import { GestionUserComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-user/gestion-user.component';
+import { GestionCategorieComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-categorie/gestion-categorie.component';
+import { GestionMessageComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-message/gestion-message.component';
+import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/statistique.component';
 
 @NgModule({
   declarations: [
@@ -41,16 +44,18 @@ import { SecurityComponent } from './security/security.component';
     PolitiqueConfiComponent,
     DashClientComponent,
     DashPrestataireComponent,
-    MainAdminComponent,
-    SidebarAdminComponent,
-    NavbarAdminComponent,
+    SidebarComponent,
+    NavbarComponent,
+    GestionUserComponent,
+    GestionCategorieComponent,
+    GestionMessageComponent,
     StatistiqueComponent,
-    SecurityComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],

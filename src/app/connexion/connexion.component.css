@@ -13,11 +13,11 @@
 
 .form-txt{
   display: grid;
-  grid-template-columns:  50%;
+  grid-template-columns:  35%;
   justify-content: center;
 
   gap: 2rem;
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 
 .form{

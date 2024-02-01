@@ -1,3 +1,4 @@
+import { GestionUserComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-user/gestion-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -9,7 +10,10 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { PolitiqueConfiComponent } from './politique-confi/politique-confi.component';
 import { ConditionUseComponent } from './condition-use/condition-use.component';
 import { FAQComponent } from './faq/faq.component';
-import { StatistiqueComponent } from './statistique/statistique.component';
+import { GestionCategorieComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-categorie/gestion-categorie.component';
+import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/statistique.component';
+import { GestionMessageComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-message/gestion-message.component';
+// import { StatistiqueComponent } from './statistique/statistique.component'
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -21,7 +25,10 @@ const routes: Routes = [
   { path: 'politique', component: PolitiqueConfiComponent },
   { path: 'conditionDeUse', component: ConditionUseComponent },
   { path: 'faq', component: FAQComponent },
+  { path: 'category', component: GestionCategorieComponent },
   { path: 'statistique', component: StatistiqueComponent },
+  { path: 'utilisateur', component: GestionUserComponent },
+  { path: 'messages', component: GestionMessageComponent },
 ];
 
 @NgModule({

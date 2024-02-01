@@ -16,11 +16,11 @@
         <input type="text" name="email" [(ngModel)]="emailLogin" ><br>
         <label for="" class="lab">Mot de passe:</label><br>
         <input type="password" name="password" [(ngModel)]="PasswordLogin"><br><br>
-        <button type="submit" class="btn">
+        <button type="submit" class="btn" (click)="login()">
           Se connecter
         </button>
         <br><br>
-        <p class="bas">Vous ne disposez pas de compte. <a href=""><i>Inscrivez-vous</i></a></p>
+        <p class="bas">Vous ne disposez pas de compte. <a href="" routerLink="/signUp"><i>Inscrivez-vous</i></a></p>
         <p>{{emailLogin}}</p>
         <p>{{PasswordLogin}}</p>
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 // import { Router } from '@angular/router';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { url } from './url';
 import { Observable } from 'rxjs';
 
@@ -10,11 +10,25 @@ import { Observable } from 'rxjs';
 export class AuthserviceService {
   constructor(private http: HttpClient) {}
 
+  public urlBase = 'http://127.0.0.1:8000/api/';
+
   login(user: any, onSuccess: Function) {
     return this.http
       .post(`${url}login`, user)
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 
+  get(path: string, onSuccess: Function) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization:
+          'Bearer' +
+          JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+      }),
+    };
+    this.http
+      .get(this.urlBase + path, httpOptions)
+      .subscribe((reponse: any) => onSuccess(reponse));
+  }
 }
 

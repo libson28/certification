@@ -26,9 +26,9 @@
 {
   display: grid;
   grid-template-columns: 37% 30%;
-  gap: 1.5rem;
+  gap: 3rem;
   justify-content: center;
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 510;
   margin-top: 0.5rem;
@@ -339,4 +339,8 @@ img
   margin: 0 auto;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
+}
+
+p.contact-title{
+  font-size: ;
 }

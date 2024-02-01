@@ -1,0 +1,7 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
+.navbar {
+ display: flex;
+ justify-content: center;
+}

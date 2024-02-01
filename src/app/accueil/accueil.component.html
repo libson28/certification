@@ -1,6 +1,9 @@
 <!-- header -->
 <app-entete></app-entete>
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+<div class="banner">
+  <img src="../../assets/banner.png" alt="">
+</div>
+<!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <img src="../../assets/11.png" class="d-block w-100 " alt="...">
@@ -20,7 +23,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</div> -->
 
 <!-- ----------------------------DEBUT SECTION  QUI SOMMES-NOUS------------------------ -->
 
@@ -35,17 +38,19 @@
   <!-- ----contenueQuiSommesNous----- -->
   <div class="mesPropos">
     <div class="propos1">
-      <img src="../../assets/aboutt.png" alt="">
+      <img src="../../assets/tttttt.png" alt="">
     </div>
     <!-- ---------- -->
     <div class="propos2">
+      <br><br><br>
+      <br>
       <p>A la recherche de profils qui sauront mener à bien vos projets , tâches, voici la solution.
       OUVRIER-EXPRESS est une plateforme qui conecte les demandeurs et les entités (ménages ou entreprises)</p>
       <p>Ensemble, facilitons la connexion entre les personnes en recherche de métiers avec ceux voulant trouver le profil
-      parfait. Ici, c’est la passion et le désir d’innover qui a guidé jusqu’à la mise sur pied de la platforme</p>
+      parfait. Ici, c'est la passion et le désir d'innover qui a guidé jusqu'à la mise sur pied de la platforme</p>
       <p>Ensemble, facilitons la connexion entre les personnes en recherche de métiers </p>
       <div class="btn">
-        <button>Voir Plus</button>
+        <button routerLink="/about">Voir Plus</button>
       </div>
     </div>
   </div>
@@ -72,7 +77,7 @@
             , les carreauleurs, les éléctriciens batiment... Nous vous facilitons votre démarche d'embaucher une de nos profils
             en les séparant selon leur domaine.
           </p>
-          <button class="btn1">tout voir</button>
+          <button class="btn1" routerLink="../liste-profil/liste-profil.component.html">tout voir</button>
           <div class="cercle">
             <img src="../../assets/cercle.png" alt="">
           </div>
@@ -201,8 +206,84 @@
   </div>
   </div>
 
-
   <!-- fin rating -->
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mx-auto max-w-7xl py-12 md:py-24">
+        <div class="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
+          <div class="flex items-center justify-center">
+            <div class="px-2 md:px-12">
+              <p class="text-2xl font-bold text-gray-900 md:text-4x1">
+                Contactez-nous
+              </p>
+              <p class="mt-4 text-lg text-gray-600 contact-title">
+                Notre équipe sommes ravis de vous aider.
+              </p>
+              <form action="" class="mt-8 space-y-4">
+                <div class="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
+                  <div class="grid w-full  items-center gap-1.5">
+                    <label
+                      class="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      for="first_name">
+                      Prénom
+                    </label>
+                    <input
+                      class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                      type="text" id="first_name" placeholder="prénom" />
+                  </div>
+                  <div class="grid w-full  items-center gap-1.5">
+                    <label
+                      class="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      for="last_name">
+                      Nom
+                    </label>
+                    <input
+                      class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                      type="text" id="last_name" placeholder="Nom" />
+                  </div>
+                </div>
+                <div class="grid w-full  items-center gap-1.5">
+                  <label
+                    class="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="email">
+                    Email
+                  </label>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    type="text" id="email" placeholder="Email" />
+                </div>
+                <!-- <div class="grid w-full  items-center gap-1.5">
+                  <label
+                    class="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="phone_number">
+                    Phone number
+                  </label>
+                  <input
+                    class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    type="tel" id="phone_number" placeholder="Phone number" />
+                </div> -->
+                <div class="grid w-full  items-center gap-1.5">
+                  <label
+                    class="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="message">
+                    Message
+                  </label>
+                  <textarea
+                    class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    id="message" placeholder="message" cols="3"></textarea>
+                </div>
+                <button type="button"
+                  class="w-full rounded-md  px-3 py-2 text-sm font-bold text-black shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                  Envoyer
+                </button>
+              </form>
+            </div>
+          </div>
+          <img alt="Contact us" class="hidden max-h-full w-full rounded-lg object-cover lg:block"
+            src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGhhcHB5JTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" />
+        </div>
+      </div>
+    </div>
+  <!-- fin contactez-nous -->
 <div class="bande">
   <img src="../../assets/bande.png" alt="">
 </div>

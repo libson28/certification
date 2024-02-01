@@ -16,6 +16,7 @@
   /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
   padding: 5px;
   width: 85%;
+
   font-family: 'Times New Roman', Times, serif;
 
 
@@ -25,7 +26,7 @@ form h2 {
   color: #0f193e;
   text-align: center;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 25px;
 
 }
 
@@ -37,13 +38,13 @@ form h2 {
 }
 
 .bbb {
-  height: 36.5rem;
+  height: 37rem;
   width: 41%;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   padding: 15px 20px;
   border-radius: 15px;
   background-color: #ffffff;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .btn {
@@ -102,13 +103,14 @@ a {
   display: flex;
   justify-content: center;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .retour{
   font-size: 18px;
   text-decoration: underline;
   color: #fff;
-  
+
   margin-left: 1rem;
 }
 
@@ -205,3 +207,13 @@ a {
     }
 }
 
+select{
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  padding: 9px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.vvv{
+  padding-bottom: 2rem;
+}
