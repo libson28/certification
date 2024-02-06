@@ -42,11 +42,12 @@ export class ConnexionComponent implements OnInit {
             // stocker notre les info de la requete dans notre localstorage
             localStorage.setItem('userOnline', JSON.stringify(reponse));
 
+
             //recuperer le userConnecter
             const userOnline = JSON.parse(
               localStorage.getItem('userOnline') || ''
             );
-            this.route.navigate(['/comment-ça-marche']);
+            this.route.navigate(['/statistique']);
           } else if (reponse.user.role === 'client') {
             Swal.fire({
               position: 'center',
@@ -54,15 +55,15 @@ export class ConnexionComponent implements OnInit {
               title: 'Bienvenue Connecté avec succès',
               showConfirmButton: true,
             });
-            //   //   // stocker notre les info de la requete dans notre localstorage
+            //stocker notre les info de la requete dans notre localstorage
             localStorage.setItem('userOnline', JSON.stringify(reponse));
 
             //recuperer le userConnecter
             const userOnline = JSON.parse(
               localStorage.getItem('userOnline') || ''
             );
-            this.route.navigate(['/profils']);
-            console.log('vous ête etudiant');
+            this.route.navigate(['/']);
+            console.log('vous êtes prestataire');
           } else if (reponse.user.role === 'prestataire') {
             Swal.fire({
               position: 'center',
@@ -77,7 +78,7 @@ export class ConnexionComponent implements OnInit {
             const userOnline = JSON.parse(
               localStorage.getItem('userOnline') || ''
             );
-            this.route.navigate(['/profils']);
+            this.route.navigate(['/']);
           }
         }
       );

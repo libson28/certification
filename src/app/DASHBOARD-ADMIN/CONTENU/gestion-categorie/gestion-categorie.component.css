@@ -8,6 +8,70 @@
   grid-template-columns: 1fr 5fr;
 }
 
-.card{
-  width: 55%;
+th {
+  margin-left: 3rem;
+}
+
+.container {
+  width: 60rem;
+}
+
+thead th {
+  background-color: rgb(11, 26, 74) !important;
+  color: white !important;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn1 {
+  background-color: #001D3D;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 550;
+}
+
+.btn1:hover{
+  background-color: #ffb820;
+}
+
+.btnn {
+  padding-bottom: 10px;
+}
+
+
+td i {
+  font-size: 20px !important;
+  padding-left: 5px;
+  color: #002144;
+}
+
+.modal-body label {
+  font-size: 19px;
+  padding-top: 15px;
+}
+
+.modal-body input {
+  width: 100%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  padding: 7px 15px;
+  border-radius: 7px;
+}
+
+.modal-body textarea {
+  width: 100%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 7px;
+}
+
+.hhh{
+  background-color: #001D3D;
+  color: #fff;
+}
+
+.modal-header {
+  margin: 0 auto;
 }

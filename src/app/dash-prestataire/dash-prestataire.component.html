@@ -10,6 +10,39 @@
           alt="">
       </div>
 
+      <!-- bouton editer profil -->
+      <div class="edit">
+        <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier mon profil <i class="bi bi-pencil-square"></i></a>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 m-auto" id="exampleModalLabel">Modification de profil</h1>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <label>Prenom</label>
+                <input type="text" value="" ><br>
+                <label>Nom</label>
+                <input type="text" value=""><br>
+                <label>Téléphone</label>
+                <input type="text" value=""><br>
+                <label>Image</label>
+                <input type="file" value=""><br>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+              <button type="button" class="btn hhh">Enregistrer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bouton editer profil -->
+
+
       <div class="info">
         <p><b>Prénom: </b>Libasse ndoye</p>
         <p><b>Nom: </b>Cissé</p>
@@ -35,7 +68,13 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">
           <!-- historique -->
+
         <div class="conteneur-table">
+          <br>
+          <div class="srch">
+            <input type="text" placeholder="Rechercher ici...">
+          </div>
+          <br>
             <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -77,6 +116,38 @@
                     <td>28/03/2023</td>
 
                 </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>André</td>
+                    <td>Ndione</td>
+                    <td>andre26.com</td>
+                    <td>28/03/2023</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>André</td>
+                    <td>Ndione</td>
+                    <td>andre26.com</td>
+                    <td>28/03/2023</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>André</td>
+                    <td>Ndione</td>
+                    <td>andre26.com</td>
+                    <td>28/03/2023</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>André</td>
+                    <td>Ndione</td>
+                    <td>andre26.com</td>
+                    <td>28/03/2023</td>
+
+                </tr>
 
             </tbody>
         </table>
@@ -89,54 +160,43 @@
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
       <!-- editer profil -->
       <div class="formulair">
-        <form action="">
+        <form >
           <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
-              <label for="">Catégorie</label>
-              <select name="category" id="category">
+              <label for="category">Catégorie</label>
+              <select name="category" id="category"   required>
                 <option value="" disabled selected>Sélectionner une catégorie</option>
-                <option value="">Informatique</option>
-                <option value="">Bâtiment</option>
-                <option value="">Ménage</option>
-                <option value="">Finance</option>
+                <option [value]="categorie.categorie_id" *ngFor="let categorie of categories">{{categorie.libelleCategorie}}</option>
+
               </select>
             </div>
 
             <div class="col">
-              <label for="">Métier</label>
-              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+              <label for="metier">Métier</label>
+              <input type="text" name="metier"  class="form-control" placeholder="Métier" required>
             </div>
 
             <div class="col">
-              <label for="">Email</label>
-              <input type="text" class="form-control"  placeholder="Last name" aria-label="Last name">
+              <label for="description">Description</label>
+              <textarea name="description"  cols="77" rows="10" required></textarea>
             </div>
 
             <div class="col">
-              <label for="">téléphone</label>
-              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+              <label for="competences">Compétences</label>
+              <textarea name="competences"  cols="77" rows="10" required></textarea>
             </div>
 
             <div class="col">
-              <label for="">Description</label>
-              <textarea name="" id="" cols="77" rows="10"></textarea>
+              <label for="experiences">Expériences</label>
+              <textarea name="experiences"  cols="77" rows="10" required></textarea>
             </div>
 
             <div class="col">
-              <label for="">Compêtences</label>
-              <textarea name="" id="" cols="77" rows="10"></textarea>
-            </div>
-
-            <div class="col">
-              <label for="">Expériences</label>
-              <textarea name="" id="" cols="77" rows="10"></textarea>
-            </div>
-
-            <div class="col">
-              <label for="">Motivation</label>
-              <textarea name="" id="" cols="77" rows="10"></textarea>
+              <label for="motivation">Motivation</label>
+              <textarea name="motivation"  cols="77" rows="10" required></textarea>
             </div>
           </div>
+          <button type="submit">Publier le profil</button>
         </form>
       </div>
 

@@ -24,7 +24,7 @@ thead th {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
 }
 
 h2 {
@@ -43,9 +43,3 @@ h2 {
   justify-content: flex-end;
 }
 
-.pagination
-{
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}

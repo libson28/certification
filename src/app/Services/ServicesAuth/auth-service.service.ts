@@ -18,6 +18,14 @@ export class AuthserviceService {
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 
+  register(user: any): Observable<any> {
+    return this.http.post(`${this.urlBase}register`, user);
+  }
+
+  addCategorie(PublierProfil: any): Observable<any> {
+    return this.http.post(`${this.urlBase}ajouterCategorie`, PublierProfil);
+  }
+
   get(path: string, onSuccess: Function) {
     const httpOptions = {
       headers: new HttpHeaders({

@@ -14,7 +14,7 @@ export class ListeProfilComponent implements OnInit {
   }
 
   getCategories() {
-    this.auth.get('listeCétegorie', (reponse: any) => {
+    this.auth.get('listeCategorie', (reponse: any) => {
       this.categories = reponse;
       console.log(reponse);
     });

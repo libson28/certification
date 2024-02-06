@@ -18,7 +18,7 @@ import { DashClientComponent } from './dash-client/dash-client.component';
 import { DashPrestataireComponent } from './dash-prestataire/dash-prestataire.component';
 
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpEvent } from '@angular/common/http';
 import { SidebarComponent } from './DASHBOARD-ADMIN/Sidebar/sidebar/sidebar.component';
 import { NavbarComponent } from './DASHBOARD-ADMIN/Navbar/navbar/navbar.component';
@@ -26,6 +26,9 @@ import { GestionUserComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-user/ges
 import { GestionCategorieComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-categorie/gestion-categorie.component';
 import { GestionMessageComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-message/gestion-message.component';
 import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/statistique.component';
+import { BtnLoginComponent } from './btn-login/btn-login.component';
+import { AuthInterceptor } from './interceptors/interceptor';
+import { AuthserviceService } from './Services/ServicesAuth/auth-service.service';
 
 @NgModule({
   declarations: [
@@ -50,16 +53,17 @@ import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/stat
     GestionCategorieComponent,
     GestionMessageComponent,
     StatistiqueComponent,
+    BtnLoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    AuthserviceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

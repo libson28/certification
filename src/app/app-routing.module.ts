@@ -13,12 +13,16 @@ import { FAQComponent } from './faq/faq.component';
 import { GestionCategorieComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-categorie/gestion-categorie.component';
 import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/statistique.component';
 import { GestionMessageComponent } from './DASHBOARD-ADMIN/CONTENU/gestion-message/gestion-message.component';
+import { DashClientComponent } from './dash-client/dash-client.component';
+import { DashPrestataireComponent } from './dash-prestataire/dash-prestataire.component';
 // import { StatistiqueComponent } from './statistique/statistique.component'
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'profils', component: ListeProfilComponent },
   { path: 'about', component: AproposComponent },
+  { path: 'client', component: DashClientComponent },
+  { path: 'prestataire', component: DashPrestataireComponent },
   { path: 'comment-ça-marche', component: GuideComponent },
   { path: 'login', component: ConnexionComponent },
   { path: 'signUp', component: InscriptionComponent },

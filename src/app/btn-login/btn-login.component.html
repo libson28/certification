@@ -1,0 +1,16 @@
+<div class="buttons">
+  <!-- Utilisation de *ngIf pour conditionnellement afficher le bouton de connexion ou de déconnexion -->
+  <a *ngIf="!isUserLoggedIn()" class="signup" routerLink="/login">
+    Se connecter <i class="bi bi-person-fill"></i>
+  </a>
+
+</div>
+<div class="user-dropdown">
+  <button class="user-btn" *ngIf="isUserLoggedIn()"  >
+    <i class="bi bi-person-circle"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="#" (click)="redirectEspacePerso()">Espace Perso</a>
+    <a href="#" class="logout" (click)="logout()">Déconnexion</a>
+  </div>
+</div>

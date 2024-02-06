@@ -1,0 +1,88 @@
+.buttons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 15px 0;
+  transition: 0.2s ease;
+}
+
+.buttons a:not(:last-child) {
+  margin-right: 30px;
+}
+
+.buttons .signup {
+  background-color: #001D3D;
+  /* border: 1px solid #fff; */
+  padding: 10px 20px;
+  border-radius: 0.375rem;
+  text-align: center;
+  transition: 0.2s ease;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.buttons .signup:hover {
+  background-color: rgb(179, 116, 0);
+}
+
+.prof{
+  font-size: 29px;
+  border: 1px solid #001D3D;
+  padding: 2px 4px;
+  border-radius: 20px;
+}
+
+
+/* ------------------------ */
+
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  /* background-color: #3498db; */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  right: 0;
+  top: 35px;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #050c35;
+  color: #fff;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+button i{
+  font-size: 29px;
+  color: #001D3D;
+}

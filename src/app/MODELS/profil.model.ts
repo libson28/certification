@@ -1,8 +1,5 @@
-export class Ouvrier {
-  constructor(
-    private Prenom: string,
-    private Nom: string,
-    private Metier: string,
-    private Image: string
-  ) {}
+export class PublierProfil {
+  libelleCategorie!: string;
+  description!: string;
+  image!: string;
 }

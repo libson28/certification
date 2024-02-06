@@ -5,7 +5,7 @@
   <!-- formulaire -->
   <div class='Formulaire-container'>
     <div class='bbb'>
-      <form>
+      <form (ngSubmit)="register()">
         <br>
         <div class="logo">
           <img src="../../assets/logo.png" alt="">
@@ -16,28 +16,30 @@
         <div class="row row-cols-1 row-cols-md-2">
           <div class="col">
             <label>Prenom</label><br>
-            <input type='text' name='prenom' class='lnc' > <br>
+            <input type='text' name='prenom' class='lnc' [(ngModel)]="prenom"> <br>
           </div>
           <div class="col">
             <label>Nom</label><br>
-            <input type='text' name='nom' class='lnc' ><br>
+            <input type='text' name='nom' class='lnc' [(ngModel)]="nom"><br>
           </div>
         </div>
-
-
+        <label>tel</label><br>
+        <input type='number' name='tel' class='lnc' [(ngModel)]="tel"><br>
+        <label>address</label><br>
+        <input type='text' name='adress' class='lnc' [(ngModel)]="adress"><br>
         <label>Email</label><br>
-        <input type='email' name='email' class='lnc' ><br>
+        <input type='email' name='email' class='lnc' [(ngModel)]="email"><br>
         <label>Mot de passe</label><br>
-        <input type='password' name='password' class='lnc'> <br>
+        <input type='password' name='password' class='lnc' [(ngModel)]="password" autocomplete="current-password"> <br>
         <label>Profil</label><br>
-        <select name="" id="" >
+        <select name="role" id="" [(ngModel)]="profil">
           <option value="" disabled selected>Sélectionnez votre profil</option>
-          <option value="">Client</option>
-          <option value="">Prestataire</option>
+          <option value="client">Client</option>
+          <option value="prestataire">Prestataire</option>
         </select><br>
         <input type='checkbox'>&nbsp;&nbsp;<span class="gcu"><i>Acceptez les conditions d'utilisation</i></span><br>
         <div class="vvv">
-          <button class='btn' >Enregistrer</button>
+          <button type="submit" class='btn' >Enregistrer</button>
           <div class="link">
             <a href="">
               <i>Se connecter</i>

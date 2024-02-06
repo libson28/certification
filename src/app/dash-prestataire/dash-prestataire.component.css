@@ -115,7 +115,7 @@
 
  .info {
    padding-left: 1rem;
-   margin-top: 6rem;
+   margin-top: 3rem;
 
  }
 
@@ -213,7 +213,7 @@
  }
 
  .conteneur-table {
-   width: 80%;
+   width: 95%;
    margin: 0 auto;
  }
 
@@ -224,14 +224,13 @@
  /* --------------------------------------------------------________________ */
  form {
    padding: 10px 30px;
-   background-color: #fbfbfb;
  }
 
  select {
    width: 100%;
    padding: 7px 0;
    border: none;
-   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
    border-radius: 5px;
  }
 
@@ -239,7 +238,7 @@
    width: 100%;
    padding: 7px 0;
    border: none;
-   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
    border-radius: 5px;
  }
 
@@ -247,7 +246,87 @@
    padding-bottom: 15px;
  }
 
- label{
-  display: flex;
-  justify-content: flex-start;
+ label {
+   display: flex;
+   justify-content: flex-start;
  }
+
+ .edit {
+   display: flex;
+   justify-content: center;
+   margin-top: 1rem;
+ }
+
+ .edit a {
+   color: #000000;
+   font-size: 18px;
+ }
+
+ .edit a:hover {
+   background-color: #0b0733;
+   padding: 7px 15px;
+   border-radius: 10px;
+   color: white;
+   text-decoration: none;
+ }
+
+ input {
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+ }
+
+ .srch input
+{
+  width: 30%;
+  padding: 7px 15px;
+  border-radius: 10px;
+}
+
+.srch
+{
+  display: flex;
+  justify-content: flex-end;
+}
+
+thead
+{
+  background-color: #0d0a3c;
+
+}
+
+thead th{
+  color: #fff !important;
+}
+
+.modal-body input{
+  width: 100%;
+  padding: 7px 0;
+  border-radius: 7px;
+}
+
+.modal-body label{
+  margin-top: 12px;
+}
+
+.hhh{
+  background-color: #0d0a3c;
+  color: #fff;
+}
+
+.valider button
+{
+  width: 95%;
+  padding: 8px 0;
+  background-color: #0b0733;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.valider{
+  display: flex;
+  justify-content: center;
+}
+
+.valider button:hover{
+  background-color: #c46f00;
+}
