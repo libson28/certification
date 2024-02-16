@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 16.7%;
+  width: 18.5%;
 
 }
 
@@ -84,10 +84,14 @@ ul li a {
  button
 {
   bottom:  0;
-  background-color: #071c32;
+  background-color: #02092e;
   color: white;
   margin: 0 auto;
   width: 100%;
+}
+
+.deconnection button:hover{
+  background-color: #ff9500;
 }
 
 

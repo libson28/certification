@@ -1,4 +1,4 @@
-<app-entete></app-entete>
+<!-- <app-entete></app-entete> -->
 
 <div class="all">
 
@@ -12,7 +12,8 @@
 
       <!-- bouton editer profil -->
       <div class="edit">
-        <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier mon profil <i class="bi bi-pencil-square"></i></a>
+        <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier mon profil <i
+            class="bi bi-pencil-square"></i></a>
       </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -24,13 +25,11 @@
             <div class="modal-body">
               <form action="">
                 <label>Prenom</label>
-                <input type="text" value="" ><br>
+                <input type="text" value=""><br>
                 <label>Nom</label>
                 <input type="text" value=""><br>
                 <label>Téléphone</label>
                 <input type="text" value=""><br>
-                <label>Image</label>
-                <input type="file" value=""><br>
               </form>
             </div>
             <div class="modal-footer">
@@ -44,10 +43,15 @@
 
 
       <div class="info">
-        <p><b>Prénom: </b>Libasse ndoye</p>
-        <p><b>Nom: </b>Cissé</p>
-        <p><b>Email: </b>libasse28.com</p>
-        <p><b>Téléphone: </b>775874213</p>
+        <p><b>Prénom: </b>{{userConnect.prenom}}</p>
+        <p><b>Nom: </b>{{userConnect.nom}}</p>
+        <p><b>Email: </b>{{userConnect.email}}</p>
+        <p><b>Téléphone: </b>{{userConnect.tel}}</p>
+      </div>
+
+      <br><br><br>
+      <div class="disconnect">
+        <button (click)="logout()">Se Déconnecter</button>
       </div>
     </div>
     <!-- ------------ -->
@@ -62,6 +66,10 @@
           <button class="nav-link lnc" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
             type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Publier mon profil</button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link lnc" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button"
+            role="tab" aria-controls="contact-tab-pane" aria-selected="false" (click)="getlistePrestaService()">Ma publication</button>
+        </li>
       </ul>
       <hr>
       <div class="tab-content" id="pills-tabContent">
@@ -69,146 +77,188 @@
           tabindex="0">
           <!-- historique -->
 
-        <div class="conteneur-table">
-          <br>
-          <div class="srch">
-            <input type="text" placeholder="Rechercher ici...">
-          </div>
-          <br>
+          <div class="conteneur-table">
+            <br>
+            <div class="srch">
+              <input type="text" placeholder="Rechercher ici...">
+            </div>
+            <br>
             <table class="table table-striped table-hover">
-            <thead>
+              <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Prenom</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Date</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Prenom</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Date</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Moussa</td>
-                    <td>Diop</td>
-                    <td>moussadiop.com</td>
-                    <td>24/12/2023</td>
+                  <th scope="row">1</th>
+                  <td>Moussa</td>
+                  <td>Diop</td>
+                  <td>moussadiop.com</td>
+                  <td>24/12/2023</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Dieynaba</td>
-                    <td>Sene</td>
-                    <td>senedieynaba.com</td>
-                    <td>12/02/2023</td>
+                  <th scope="row">2</th>
+                  <td>Dieynaba</td>
+                  <td>Sene</td>
+                  <td>senedieynaba.com</td>
+                  <td>12/02/2023</td>
                 </tr>
 
                 <tr>
-                    <th scope="row">3</th>
-                    <td>Malick</td>
-                    <td>Fall</td>
-                    <td>malickfall.com</td>
-                    <td>28/03/2023</td>
+                  <th scope="row">3</th>
+                  <td>Malick</td>
+                  <td>Fall</td>
+                  <td>malickfall.com</td>
+                  <td>28/03/2023</td>
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>André</td>
-                    <td>Ndione</td>
-                    <td>andre26.com</td>
-                    <td>28/03/2023</td>
-
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>André</td>
-                    <td>Ndione</td>
-                    <td>andre26.com</td>
-                    <td>28/03/2023</td>
+                  <th scope="row">4</th>
+                  <td>André</td>
+                  <td>Ndione</td>
+                  <td>andre26.com</td>
+                  <td>28/03/2023</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>André</td>
-                    <td>Ndione</td>
-                    <td>andre26.com</td>
-                    <td>28/03/2023</td>
+                  <th scope="row">4</th>
+                  <td>André</td>
+                  <td>Ndione</td>
+                  <td>andre26.com</td>
+                  <td>28/03/2023</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>André</td>
-                    <td>Ndione</td>
-                    <td>andre26.com</td>
-                    <td>28/03/2023</td>
+                  <th scope="row">4</th>
+                  <td>André</td>
+                  <td>Ndione</td>
+                  <td>andre26.com</td>
+                  <td>28/03/2023</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>André</td>
-                    <td>Ndione</td>
-                    <td>andre26.com</td>
-                    <td>28/03/2023</td>
+                  <th scope="row">4</th>
+                  <td>André</td>
+                  <td>Ndione</td>
+                  <td>andre26.com</td>
+                  <td>28/03/2023</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>André</td>
+                  <td>Ndione</td>
+                  <td>andre26.com</td>
+                  <td>28/03/2023</td>
 
                 </tr>
 
-            </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <!-- fin editer profil -->
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <!-- editer profil -->
+          <div class="formulair">
+            <form action="">
+              <label>&nbsp;&nbsp; Image</label>
+              <div class="imgProfil">
+                <input type="file" value="" name="image" [(ngModel)]="image" (change)="getFile($event)"><br>
+              </div>
+              <br>
+              <div class="row row-cols-1 row-cols-md-2">
+
+                <div class="col">
+                  <label for="category">Catégorie</label>
+                  <select name="category" id="category" name="categorie" required="" [(ngModel)]="categorie">
+                    <option value="" disabled selected>Sélectionner une catégorie</option>
+                    <option *ngFor="let categorie of categories" [value]="categorie.id">{{categorie.libelleCategorie}}
+                    </option>
+
+                  </select>
+                </div>
+
+                <div class="col">
+                  <label for="metier">Métier</label>
+                  <input type="text" name="metier" class="form-control" placeholder="Métier" required=""
+                    [(ngModel)]="metier">
+                </div>
+
+                <div class="col">
+                  <label for="description">Description</label>
+                  <textarea name="description" cols="77" rows="10" required="" [(ngModel)]="presentation"></textarea>
+                </div>
+
+                <div class="col">
+                  <label for="competences">Compétences</label>
+                  <textarea name="competences" cols="77" rows="10" required="" [(ngModel)]="competence"></textarea>
+                </div>
+
+                <div class="col">
+                  <label for="experiences">Expériences</label>
+                  <textarea name="experiences" cols="77" rows="10" required="" [(ngModel)]="experience"></textarea>
+                </div>
+
+                <div class="col">
+                  <label for="motivation">Motivation</label>
+                  <textarea name="motivation" cols="77" rows="10" required="" [(ngModel)]="motivation"></textarea>
+                </div>
+              </div>
+              <button type="submit" (click)="ajoutProfil()">Publier le profil</button>
+            </form>
+          </div>
+
         </div>
 
-    </div>
-    <!-- fin editer profil -->
+  <div class="tab-pane fade"  id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <div class="container" *ngFor="let profile of tabPrestataireFilter">
+          <div class="editing">
+            <button>Modifier <i class="bi bi-pencil-square"></i></button>
+          </div>
+          <br>
+          <div class="metier mb-4">
+            <div>
+            <h4>Metier</h4>
+            <p>{{profile.metier}}</p>
+          </div>
+          </div>
 
-    <!-- ----------------------------------------------------------------------------- -->
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-      <!-- editer profil -->
-      <div class="formulair">
-        <form >
-          <div class="row row-cols-1 row-cols-md-2">
+          <div class="row row-cols-1 row-cols-md-2" id="resumer">
             <div class="col">
-              <label for="category">Catégorie</label>
-              <select name="category" id="category"   required>
-                <option value="" disabled selected>Sélectionner une catégorie</option>
-                <option [value]="categorie.categorie_id" *ngFor="let categorie of categories">{{categorie.libelleCategorie}}</option>
-
-              </select>
+              <h4>Description</h4>
+              <p>{{profile.presentation}}</p>
             </div>
-
             <div class="col">
-              <label for="metier">Métier</label>
-              <input type="text" name="metier"  class="form-control" placeholder="Métier" required>
+              <h4>Compêtences</h4>
+              <p>{{profile.competence}}</p>
             </div>
-
             <div class="col">
-              <label for="description">Description</label>
-              <textarea name="description"  cols="77" rows="10" required></textarea>
+              <h4>Experiences</h4>
+              <p>{{profile.experience}}</p>
             </div>
-
             <div class="col">
-              <label for="competences">Compétences</label>
-              <textarea name="competences"  cols="77" rows="10" required></textarea>
-            </div>
-
-            <div class="col">
-              <label for="experiences">Expériences</label>
-              <textarea name="experiences"  cols="77" rows="10" required></textarea>
-            </div>
-
-            <div class="col">
-              <label for="motivation">Motivation</label>
-              <textarea name="motivation"  cols="77" rows="10" required></textarea>
+              <h4>Motivation</h4>
+              <p>{{profile.motivation}}</p>
             </div>
           </div>
-          <button type="submit">Publier le profil</button>
-        </form>
+        </div>
+        </div>
+
       </div>
 
+
+      </div>
+      <!-- fin publication de profil -->
+
+
+      <!-- mes resultats de publication -->
+
     </div>
-  </div>
-  <!-- fin publication de profil -->
-
-
-
-  <!-- historique  -->
-
-
-
-
-</div>

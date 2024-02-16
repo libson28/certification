@@ -24,7 +24,7 @@
   background-color: rgb(179, 116, 0);
 }
 
-.prof{
+.prof {
   font-size: 29px;
   border: 1px solid #001D3D;
   padding: 2px 4px;
@@ -62,7 +62,7 @@
   border-radius: 5px;
   padding: 10px;
   right: 0;
-  top: 35px;
+  top: 40px;
 }
 
 .dropdown-content a {
@@ -82,7 +82,13 @@
   display: block;
 }
 
-button i{
+button i {
   font-size: 29px;
   color: #001D3D;
+}
+
+
+
+.dropdown-content a{
+  cursor: pointer;
 }

@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./entete.component.css'],
 })
 export class EnteteComponent {
+  isMenuOpen: boolean = false;
 
-
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+  boutonActif = 1;
 }

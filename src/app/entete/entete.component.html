@@ -8,7 +8,7 @@
       <li><i class="bi bi-linkedin"></i></li>
     </ul>
   </div>
-  <!-- ------------------------ -->
+
   <nav class="navbar">
     <h2 class="logo"><a href="#"><img src="../../assets/logo.png" alt="" height="70px"></a>
     </h2>
@@ -19,11 +19,18 @@
       </svg>
     </label>
     <ul class="links">
-      <li><a href="#" routerLink="/">Accueil</a></li>
-      <li><a href="#" routerLink="/profils">Profils</a></li>
-      <li><a href="#" routerLink="/comment-ça-marche">Comment ça marche ?</a></li>
-      <li><a href="#" routerLink="/about">A propos</a></li>
+      <li><a href="#"  [ngClass]="{'active': boutonActif === 1}" (click)="boutonActif = 1" routerLink="/">Accueil</a></li>
+      <li><a href="#"  [ngClass]="{'active': boutonActif === 2}" (click)="boutonActif = 2" routerLink="/profils">Profils</a></li>
+      <li><a href="#"  [ngClass]="{'active': boutonActif === 3}" (click)="boutonActif = 3" routerLink="/comment-ça-marche">Comment ça marche ?</a></li>
+      <li><a href="#"  [ngClass]="{'active': boutonActif === 4}" (click)="boutonActif = 4" routerLink="/about">A propos</a></li>
     </ul>
-    <app-btn-login ></app-btn-login>
+    <div class="btnConnect">
+      <app-btn-login ></app-btn-login>
+    </div>
+
   </nav>
 </header>
+
+
+
+

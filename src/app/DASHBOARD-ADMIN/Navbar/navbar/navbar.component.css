@@ -4,4 +4,6 @@
 .navbar {
  display: flex;
  justify-content: center;
+ width: 95%;
+ right: 0;
 }

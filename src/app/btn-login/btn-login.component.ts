@@ -28,6 +28,9 @@ export class BtnLoginComponent implements OnInit {
 
   logout(): void {
     localStorage.removeItem('userOnline');
+    localStorage.setItem('isAdmin', JSON.stringify(false));
+    localStorage.setItem('isClient', JSON.stringify(false));
+    localStorage.setItem('isPrestataire', JSON.stringify(false));
     this.router.navigate(['/']);
   }
 }

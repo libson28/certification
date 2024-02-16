@@ -16,24 +16,25 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 m-auto" id="exampleModalLabel">Modification de profil</h1>
+            <h1 class="modal-title fs-5 m-auto" id="exampleModalLabel">Ajout de categorie</h1>
           </div>
           <div class="modal-body">
             <!-- formulaire d'ajout -->
-      <form (ngSubmit)="onSubmit()">
-        <label>Libellé catégorie</label><br>
-        <input type="text" name="libelleCategorie" [(ngModel)]="libelleCategorie" required><br>
+            <form (ngSubmit)="onSubmit()">
+              <label>Libellé catégorie</label><br>
+              <input type="text" name="libelleCategorie" [(ngModel)]="libelleCategorie" required><br>
 
-        <label>Description</label><br>
-        <textarea [(ngModel)]="description" name="description" required></textarea>
+              <label>Description</label><br>
+              <textarea [(ngModel)]="description" name="description" required></textarea>
 
-        <button type="submit" class="btn hhh" data-bs-dismiss="modal">Enregistrer</button>
-      </form>
+              <div class="modal-footer">
+                <button type="submit" class="btn hhh" data-bs-dismiss="modal">Enregistrer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+              </div>
+            </form>
             <!-- fin formulaire d'ajout -->
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-          </div>
+
         </div>
       </div>
     </div>
@@ -51,16 +52,24 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Libellé catégorie</th>
-            <th scope="col">Nombre d'inscrit</th>
+            <th scope="col">Description</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>informatique</td>
-            <td>11</td>
-            <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square" ></i></a>&nbsp; <a href=""><i class="bi bi-trash3"></i></a></td>
+          <tr *ngFor="let categorie of  getItemsPage() let index=index">
+            <td scope="row">{{index+1}}</td>
+            <td>{{categorie.libelleCategorie}}</td>
+            <td>{{categorie.description}}</td>
+            <td>
+              <button class="me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="getInfoCategorie(categorie)" title="Modifier">
+                <i class="bi bi-pencil-square" ></i>
+              </button>
+              <button>
+                <i class="bi bi-trash3" title="Supprimer" (click)="supprimerTrajet(categorie.id)"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -73,24 +82,49 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier la catégorie</h1>
             </div>
             <div class="modal-body">
+
+              <!-- <form *ngIf="selectedCategory" (ngSubmit)="onSubmitModification()"> -->
               <form action="">
-                <label>Libellé catégorie</label><br>
-                <input type="text">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Libellé catégorie</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" name="LibelleCategorie"
+                    [(ngModel)]="libelleCategorie">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                    [(ngModel)]="description"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn hhh" data-bs-dismiss="modal"
+                    (click)="updateCategorie()">Modifier</button>
+                </div>
               </form>
+
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              <button type="button" class="btn btn-primary">Enregistrer</button>
-            </div>
+
           </div>
         </div>
       </div>
       <!-- fin Modal modifier catégorie -->
 
-
-
-
-
-
+      <div class="pagination mb-5" *ngIf="getItemsPage().length">
+        <div>
+          <div class="d-flex justify-content-end mb-2">
+            <button class="rounded-2 btnColor  mx-2" [disabled]="pageActuelle === 1"
+              (click)="pageActuelle = pageActuelle - 1">
+              <i class="bi bi-arrow-left-circle-fill me-2"></i>
+            </button>
+            <button class=" mx-2 page" *ngFor="let page of pages" (click)="pageActuelle = page">
+              <span class="pageActuelle fs-5" *ngIf="page===pageActuelle">{{page}}</span>
+              <span *ngIf="page != pageActuelle">{{page}}</span>
+              <!-- {{ page }} -->
+            </button>
+            <button class="rounded-2 btnColor mx-2" [disabled]="pageActuelle === totalPages"
+              (click)="pageActuelle = pageActuelle + 1">
+              <i class="bi bi-arrow-right-circle-fill"></i>
+            </button>
+          </div>
+        </div>
     </div>
   </div>

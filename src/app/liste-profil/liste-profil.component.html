@@ -2,15 +2,82 @@
 <div class="banner">
   <img src="../../assets/liste-profil.png" alt="">
 </div>
-
+<div class="container mb-3"></div>
 <!-- filtre par catégorie -->
 <div class="filtre">
   <h2>Catégories:</h2>
   <div class="categorie">
     <ul>
+      <li><button class="defaut" [ngClass]="{'fond-btn': boutonActif === 0}" (click)="boutonActif = 0" (click)="getProfileByCategorie('tout')">Tous</button></li>
       <li *ngFor="let categorie of categories">
-        <button>{{categorie.libelleCategorie}}</button>
+        <button [ngClass]="{'fond-btn': boutonActif === categorie.id}" (click)="boutonActif = categorie.id" (click)="getProfileByCategorie(categorie.id)">{{categorie.libelleCategorie}}</button>
       </li>
     </ul>
   </div>
 </div>
+
+
+
+
+<!-- listes des profils -->
+<div class="container mb-3">
+  <br>
+  <!-- <div class="srch">
+    <input type="text" placeholder="Recherchez ici..." [(ngModel)]="filterValue" (input)="onSearch()">
+  </div> -->
+  <!-- les cartes de profil -->
+
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let profile of getItemsPage()">
+      <div class="card h-100" (click)="detailPrestataire(profile.id)">
+        <a href=""  [routerLink]="['/detail',profile.id]" (click)="afficherDetailsPrestataire()">
+          <img src="http://127.0.0.1:8000/storage/{{profile.images}}" class="card-img-top" alt="...">
+        </a>
+
+        <div class="card-body">
+          <h5 class="card-title">{{profile.prenom}} {{profile.nom}}</h5>
+          <p class="card-text">{{profile.metier}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngIf="getItemsPage().length===0">
+    <p style="color: red;">Aucun prestataire trouver dans cette categorie</p>
+  </div> -->
+</div>
+
+<div class="container pagination">
+<div class="pagination mb-5" *ngIf="getItemsPage().length">
+  <div>
+    <div class="d-flex justify-content-end mb-2">
+      <button class="rounded-2 btnColor  mx-2" [disabled]="pageActuelle === 1"
+        (click)="pageActuelle = pageActuelle - 1">
+        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+      </button>
+      <button class=" mx-2 page" *ngFor="let page of pages" (click)="pageActuelle = page">
+        <span class="pageActuelle fs-5" *ngIf="page===pageActuelle">{{page}}</span>
+        <span *ngIf="page != pageActuelle">{{page}}</span>
+        <!-- {{ page }} -->
+      </button>
+      <button class="rounded-2 btnColor mx-2" [disabled]="pageActuelle === totalPages"
+        (click)="pageActuelle = pageActuelle + 1">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+<!--
+<div *ngFor="let profile of profiles">
+  <span>{{profile.nomService}}</span>
+  <span></span>
+  <img src="{{profile.image}}" alt="">
+</div> -->
+
+

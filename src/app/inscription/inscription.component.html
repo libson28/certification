@@ -1,12 +1,12 @@
 <div class="bloc">
   <br>
-  <a href="#" class="retour"><i class="bi bi-arrow-left"></i> Retour</a>
+  <a href="#" routerLink="/login" class="retour"><i class="bi bi-arrow-left"></i> Retour</a>
 
   <!-- formulaire -->
   <div class='Formulaire-container'>
     <div class='bbb'>
       <form (ngSubmit)="register()">
-        <br>
+
         <div class="logo">
           <img src="../../assets/logo.png" alt="">
         </div>
@@ -22,11 +22,17 @@
             <label>Nom</label><br>
             <input type='text' name='nom' class='lnc' [(ngModel)]="nom"><br>
           </div>
+          <div class="col">
+            <label>tel</label><br>
+            <input type='number' name='tel' class='lnc' [(ngModel)]="tel"><br>
+          </div>
+          <div class="col">
+            <label>address</label><br>
+            <input type='text' name='adress' class='lnc' [(ngModel)]="adress"><br>
+          </div>
         </div>
-        <label>tel</label><br>
-        <input type='number' name='tel' class='lnc' [(ngModel)]="tel"><br>
-        <label>address</label><br>
-        <input type='text' name='adress' class='lnc' [(ngModel)]="adress"><br>
+
+
         <label>Email</label><br>
         <input type='email' name='email' class='lnc' [(ngModel)]="email"><br>
         <label>Mot de passe</label><br>
@@ -37,11 +43,10 @@
           <option value="client">Client</option>
           <option value="prestataire">Prestataire</option>
         </select><br>
-        <input type='checkbox'>&nbsp;&nbsp;<span class="gcu"><i>Acceptez les conditions d'utilisation</i></span><br>
         <div class="vvv">
-          <button type="submit" class='btn' >Enregistrer</button>
+          <button type="submit" class='btn'>Enregistrer</button>
           <div class="link">
-            <a href="">
+            <a href="" routerLink="/login">
               <i>Se connecter</i>
             </a>
           </div>

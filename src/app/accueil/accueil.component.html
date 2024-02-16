@@ -3,27 +3,6 @@
 <div class="banner">
   <img src="../../assets/Ave.png" alt="">
 </div>
-<!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="5000">
-      <img src="../../assets/11.png" class="d-block w-100 " alt="...">
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="../../assets/111.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../../assets/11.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
 
 <!-- ----------------------------DEBUT SECTION  QUI SOMMES-NOUS------------------------ -->
 
@@ -233,23 +212,24 @@
       <img src="../../assets/formContact.png" alt="">
     </div>
     <div class="champs">
-      <form action="">
-        <br>
-        <div class="logoo">
-          <img src="../../assets/logo.png" alt="">
+    <form action="" (ngSubmit)="onSubmit()">
+      <br>
+      <div class="logoo">
+        <img src="../../assets/logo.png" alt="">
+      </div>
+      <h4>Notre équipe aimerions beaucoup vous aider</h4>
+      <h5></h5>
+      <div class="input">
+        <label>Email</label><br>
+        <input type="text" name="email" id="email" [(ngModel)]="email" required=""><br>
+        <label>Message</label><br>
+        <textarea name="message" id="message" cols="30" rows="5" [(ngModel)]="message"></textarea>
+        <div class="btnSend">
+          <button type="submit">Envoyer</button>
         </div>
-        <h4>Notre équipe aimerions beaucoup vous aider</h4>
-        <h5></h5>
-        <div class="input">
-          <label>Email</label><br>
-          <input type="text"><br>
-          <label>Message</label><br>
-          <textarea name="" id="" cols="30" rows="5"></textarea>
-          <div class="btnSend">
-            <button type="submit">Envoyer</button>
-          </div>
-        </div>
-      </form>
+      </div>
+    </form>
+
 
     </div>
   </div>

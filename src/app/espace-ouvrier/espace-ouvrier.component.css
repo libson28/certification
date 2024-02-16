@@ -330,3 +330,18 @@ h4{
     padding-top: 3rem;
   }
 }
+
+li button
+a
+{
+  color: #fff;
+}
+
+a{
+  text-decoration: none;
+}
+
+.mail a
+{
+  color: #000;
+}
