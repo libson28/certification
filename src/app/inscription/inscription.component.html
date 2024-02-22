@@ -6,55 +6,96 @@
   <div class='Formulaire-container'>
     <div class='bbb'>
       <form (ngSubmit)="register()">
-
         <div class="logo">
           <img src="../../assets/logo.png" alt="">
         </div>
-        <h2>
-          Inscrivez-vous !
-        </h2>
-        <div class="row row-cols-1 row-cols-md-2">
+        <h2>Inscrivez-vous !</h2>
+        <div class="row row-cols-1 row-cols-md-3">
           <div class="col">
-            <label>Prenom</label><br>
-            <input type='text' name='prenom' class='lnc' [(ngModel)]="prenom"> <br>
+            <label>Prenom<span class="etoile">*</span></label><br>
+            <input type='text' name='prenom' class='lnc' [(ngModel)]="prenom"
+              [ngClass]="{'is-valid': isFieldValid('prenom'), 'is-invalid': !isFieldValid('prenom') && isFieldDirty('prenom')}"
+              (input)="setFieldDirty('prenom')"> <br>
+            <div *ngIf="!isFieldValid('prenom') && isFieldDirty('prenom')" class="invalid-feedback">
+              Veuillez saisir un prénom d'au moins 2 lettres.
+            </div>
           </div>
           <div class="col">
-            <label>Nom</label><br>
-            <input type='text' name='nom' class='lnc' [(ngModel)]="nom"><br>
+            <label>Nom<span class="etoile">*</span></label><br>
+            <input type='text' name='nom' class='lnc' [(ngModel)]="nom"
+              [ngClass]="{'is-valid': isFieldValid('nom'), 'is-invalid': !isFieldValid('nom') && isFieldDirty('nom')}"
+              (input)="setFieldDirty('nom')"><br>
+            <div *ngIf="!isFieldValid('nom') && isFieldDirty('nom')" class="invalid-feedback">
+              Veuillez saisir un nom d'au moins 2 lettres.
+            </div>
           </div>
           <div class="col">
-            <label>tel</label><br>
-            <input type='number' name='tel' class='lnc' [(ngModel)]="tel"><br>
-          </div>
-          <div class="col">
-            <label>address</label><br>
-            <input type='text' name='adress' class='lnc' [(ngModel)]="adress"><br>
+            <label>tel<span class="etoile">*</span></label><br>
+            <input type='tel' name='tel' class='lnc' [(ngModel)]="tel"
+              [ngClass]="{'is-valid': isFieldValid('tel'), 'is-invalid': !isFieldValid('tel') && isFieldDirty('tel')}"
+              (input)="setFieldDirty('tel')" pattern="[0-9]{9}">
+            <div *ngIf="!isFieldValid('tel') && isFieldDirty('tel')" class="invalid-feedback">
+              Veuillez saisir un numéro de téléphone valide.
+            </div>
           </div>
         </div>
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col">
+            <label>Email<span class="etoile">*</span></label><br>
+            <input type='email' name='email' class='lnc' [(ngModel)]="email"
+              [ngClass]="{'is-valid': isFieldValid('email'), 'is-invalid': !isFieldValid('email') && isFieldDirty('email')}"
+              (input)="setFieldDirty('email')">
+            <div *ngIf="!isFieldValid('email') && isFieldDirty('email')" class="invalid-feedback">
+              Veuillez saisir une adresse e-mail valide.
+            </div>
+          </div>
+          <div class="col">
+            <label>address<span class="etoile">*</span></label><br>
+            <input type='text' name='adress' class='lnc' [(ngModel)]="adress"><br>
+          </div>
 
-
-        <label>Email</label><br>
-        <input type='email' name='email' class='lnc' [(ngModel)]="email"><br>
-        <label>Mot de passe</label><br>
-        <input type='password' name='password' class='lnc' [(ngModel)]="password" autocomplete="current-password"> <br>
-        <label>Profil</label><br>
-        <select name="role" id="" [(ngModel)]="profil">
+        <div class="col">
+          <label>Mot de passe<span class="etoile">*</span></label><br>
+          <input type='password' name='password' class='lnc' [(ngModel)]="password" autocomplete="current-password"
+            [ngClass]="{'is-valid': isFieldValid('password'), 'is-invalid': !isFieldValid('password') && isFieldDirty('password')}"
+            (input)="setFieldDirty('password')">
+          <div *ngIf="!isFieldValid('password') && isFieldDirty('password')" class="invalid-feedback">
+            Le mot de passe doit contenir au moins 6 caractères sans espaces.
+          </div>
+        </div>
+        <div class="col">
+          <label>Confirmer mot de passe<span class="etoile">*</span></label><br>
+          <input type='password' name='ConfPassword' class='lnc' autocomplete="current-password"
+            [ngClass]="{'is-valid': isFieldValid('ConfPassword'), 'is-invalid': !isFieldValid('ConfPassword') && isFieldDirty('password')}"
+            (input)="setFieldDirty('password')">
+          <div *ngIf="!isFieldValid('password') && isFieldDirty('password')" class="invalid-feedback">
+            Le mot de passe doit contenir au moins 6 caractères sans espaces.
+          </div>
+        </div>
+        </div>
+        <label>Profil<span class="etoile">*</span></label><br>
+        <select name="role" id="" [(ngModel)]="profil"
+          [ngClass]="{'is-valid': isFieldValid('profil'), 'is-invalid': !isFieldValid('profil') && isFieldDirty('profil')}"
+          (change)="setFieldDirty('profil')">
           <option value="" disabled selected>Sélectionnez votre profil</option>
           <option value="client">Client</option>
           <option value="prestataire">Prestataire</option>
-        </select><br>
-        <div class="vvv">
-          <button type="submit" class='btn'>Enregistrer</button>
-          <div class="link">
-            <a href="" routerLink="/login">
-              <i>Se connecter</i>
-            </a>
-          </div>
+        </select>
+        <div *ngIf="!isFieldValid('profil') && isFieldDirty('profil')" class="invalid-feedback">
+          Veuillez sélectionner un profil.
         </div>
         <br>
+        <div class="vvv">
+          <button type="submit" class='btn'
+            [disabled]="!isFormValid() || !isFieldValid('prenom') || !isFieldValid('nom') || !isFieldValid('email') || !isFieldValid('password') || !isFieldValid('profil') || !isFieldValid('tel') || !isFieldValid('adress')">
+            Enregistrer
+          </button>
+          <div class="link">
+            <a href="" routerLink="/login"><i>Se connecter</i></a>
+          </div>
+        </div>
       </form>
     </div>
-
   </div>
 
 

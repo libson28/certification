@@ -4,16 +4,19 @@
 
   <div class="conteneur-dash">
     <div class="sidebar">
-      <div class="imgProfil">
+      <div class="imgProfil" *ngFor="let profile of tabPrestataireFilter">
         <img
-          src="https://img.freepik.com/free-photo/young-handsome-man-posing_23-2148884333.jpg?size=626&ext=jpg&uid=R121268218&ga=GA1.2.513108714.1692835132&semt=sph"
+          src="http://127.0.0.1:8000/storage/{{profile.images}}"
           alt="">
       </div>
 
       <!-- bouton editer profil -->
       <div class="edit">
-        <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier mon profil <i
+        <a href="" class="btn blanc" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifier mon profil <i
             class="bi bi-pencil-square"></i></a>
+      </div>
+      <div class="disconnect">
+        <button (click)="logout()">Se Déconnecter</button>
       </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -49,10 +52,7 @@
         <p><b>Téléphone: </b>{{userConnect.tel}}</p>
       </div>
 
-      <br><br><br>
-      <div class="disconnect">
-        <button (click)="logout()">Se Déconnecter</button>
-      </div>
+
     </div>
     <!-- ------------ -->
     <div class="contenu">

@@ -6,7 +6,7 @@ export const AdminGuard = () => {
     const auth = JSON.parse(localStorage.getItem("isAdmin") || "");
 
     if (!auth) {
-        router.navigateByUrl('/')
+        router.navigateByUrl('/');
         return false;
     }
 

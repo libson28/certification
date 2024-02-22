@@ -3,9 +3,19 @@
    grid-template-columns: 30% 75%;
    justify-content: center;
    gap: 2px;
-   padding: 0 4rem;
+   padding: 0 2.25rem;
 
  }
+
+ .blanc{
+  color: #fff !important;
+ }
+
+ /* @media screen and (max-width: 1024px){
+  .sidebar{
+    width: 15rem !important;
+  }
+ } */
 
  @media screen and (max-width: 770px) {
    .conteneur-dash {
@@ -15,6 +25,10 @@
      margin-top: 1rem;
      gap: 2px;
      padding: 5px 20px;
+   }
+
+   .sidebar{
+    height: 35rem !important;
    }
 
    .info {
@@ -90,7 +104,8 @@
  }
 
  .imgProfil img {
-   width: 40%;
+   width: 120px;
+   height: 125px;
    border-radius: 50%;
    margin-top: 1.5rem;
    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -103,7 +118,7 @@
 
  .sidebar {
    height: 100vh;
-   background-color: #fbfbfb;
+   background-color: #0b0733;
    border-radius: 5px;
    box-shadow: rgba(129, 129, 129, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
  }
@@ -116,10 +131,12 @@
  .info {
    padding-left: 1rem;
    margin-top: 3rem;
+  color: #fff !important;
  }
 
  p {
    font-size: 16px;
+
  }
 
  b {
@@ -128,9 +145,10 @@
  }
 
  ul {
-   display: grid;
+   display: flex;
    justify-content: center;
    padding: 15px 10px;
+   flex-wrap: wrap;
    /* background-color: #0b043b; */
    padding: 15px 10px;
  }
@@ -217,7 +235,7 @@
  }
 
  .info p {
-   color: #000000 !important;
+   color: #fff !important;
  }
 
  /* --------------------------------------------------------________________ */
@@ -262,10 +280,10 @@
  }
 
  .edit a:hover {
-   background-color: #0b0733;
+   background-color: #ffffff;
    padding: 7px 15px;
    border-radius: 10px;
-   color: white;
+   color: rgb(0, 0, 0) !important;
    text-decoration: none;
  }
 
@@ -359,7 +377,7 @@ form button:hover{
 }
 
 .editing button{
-  padding: 7px 13px;
+  padding: 5px 8px;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 600;
@@ -373,15 +391,21 @@ form button:hover{
 }
 
 .disconnect button{
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   padding: 5px 10px;
   border-radius: 4px;
+  color: #fff ;
+}
+
+.disconnect button:hover{
+  background-color: #989898;
 }
 
 .disconnect
 {
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 }
 .metier
 {
@@ -389,5 +413,5 @@ form button:hover{
   justify-content: center;
   text-align: center;
   background-color: #f5f5f5;
-  
+
 }

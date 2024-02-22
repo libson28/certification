@@ -1,11 +1,11 @@
-.bloc{
+.bloc {
   background-image: url(../../assets/inscrit.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -26,7 +26,7 @@ form h2 {
   color: #0f193e;
   text-align: center;
   padding-top: 1rem;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 
 }
 
@@ -38,13 +38,13 @@ form h2 {
 }
 
 .bbb {
-  height: 37rem;
-  width: 41%;
+  height: auto;
+  width: 55%;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   padding: 15px 20px;
   border-radius: 15px;
   background-color: #ffffff;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .btn {
@@ -65,14 +65,14 @@ button:hover {
 }
 
 input {
-box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   margin-top: 9.5px;
   padding: 11px 0;
 }
 
 .logIn {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .logIn i {
@@ -84,136 +84,155 @@ a {
   text-decoration: none;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .logo img {
-  width: 45%;
+  width: 32%;
 }
 
-.link a{
+.link a {
   color: #0f193e;
   font-size: 16px;
   text-decoration: underline;
 }
 
-.link{
+.link {
   display: flex;
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.retour{
+.retour {
   font-size: 18px;
   text-decoration: underline;
   color: #fff;
-
   margin-left: 1rem;
 }
 
-.retour:hover{
- color: rgb(255, 174, 0);
+.retour:hover {
+  color: rgb(255, 174, 0);
 }
 
 
-@media screen and (max-width: 1268px){
+@media screen and (max-width: 1268px) {
   .bbb {
-      height: 36.5rem;
-      width: 45%;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: 36.5rem;
+    width: 45%;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 4rem;
+  }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .bbb {
-      height: 36.5rem;
-      width: 48%;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: 36.5rem;
+    width: 48%;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 4rem;
+  }
 }
 
-@media screen and (max-width: 867px){
+@media screen and (max-width: 867px) {
   .bbb {
-      height: 36.5rem;
-      width: 60% !important;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: 36.5rem;
+    width: 60% !important;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 4rem;
+  }
 
-    .gcu i{
-      font-size: 16px;
-    }
+  .gcu i {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
   .bbb {
-      height: 36.5rem;
-      width: 65% !important;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: auto;
+    width: 80% !important;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 1.5rem;
+  }
 
-    .gcu i{
-      font-size: 16px;
-    }
+  .gcu i {
+    font-size: 16px;
+  }
+
+  .bloc {
+    background-image: url(../../assets/inscrit.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: auto;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+  }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 650px) {
   .bbb {
-      height: 36.5rem;
-      width: 70% !important;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: auto;
+    width: 70% !important;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 4rem;
+  }
 
-    .gcu i{
-      font-size: 16px;
-    }
+  .gcu i {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   .bbb {
-      height: 36.5rem;
-      width: 100% !important;
-      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-      padding: 15px 20px;
-      border-radius: 15px;
-      background-color: #ffffff;
-      margin-top: 4rem;
-    }
+    height: auto;
+    width: 100% !important;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-top: 4rem;
+  }
 
-    .gcu i{
-      font-size: 16px;
-    }
+  .gcu i {
+    font-size: 16px;
+  }
 }
 
-select{
+select {
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   padding: 9px 0;
   width: 100%;
   border-radius: 5px;
 }
 
-.vvv{
+.vvv {
   padding-bottom: 2rem;
+}
+
+form label {
+  margin-top: 7px;
+}
+
+.etoile
+{
+  color: red;
 }

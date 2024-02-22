@@ -64,7 +64,8 @@ ul li .whatsapp{
 }
 
 .profil img{
-  width: 15%;
+  width: 200px;
+  height: 200px;
   padding-left: 2rem;
   margin-top: -5.5rem;
 }

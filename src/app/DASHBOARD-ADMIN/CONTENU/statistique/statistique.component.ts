@@ -19,6 +19,10 @@ interface User {
 })
 export class StatistiqueComponent {
   public users: User[] = [];
+  public clients: any[] = [];
+  public prestataires: any[] = [];
+  // public users: User[] = [];
+
   tabUserFilter: any[] = [];
   tabUser: any;
   filterValue: any;
@@ -32,6 +36,12 @@ export class StatistiqueComponent {
   getAllUsers() {
     this.userService.get('getAllUsers', (response: User[]) => {
       this.users = response;
+      this.clients = this.users.filter(
+        (client: any) => client.role === 'client'
+      );
+      this.prestataires = this.users.filter(
+        (prestataire: any) => prestataire.role === 'prestataire'
+      );
       console.log(response);
       this.tabUserFilter = this.users;
     });

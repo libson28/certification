@@ -1,22 +1,36 @@
 <div class="page">
-<p class="retour"><i class="fa-solid fa-left-long" style="color: #ffffff;"></i><a href="" routerLink="/"> Retour à l'accueil</a></p>
+  <p class="retour"><i class="fa-solid fa-left-long" style="color: #ffffff;"></i><a href="" routerLink="/"> Retour à
+      l'accueil</a></p>
 
-<!-- description et formulaire -->
-<div class="form-txt">
-  <!-- <div class="description">
+  <!-- description et formulaire -->
+  <div class="form-txt">
+    <!-- <div class="description">
     <p><b>OUVRIER-EXPRESS</b>,<br>l'alliance parfaite entre compétence et opportunité ! Connectons savoir-faire et besoins en un clic,
     pour un monde du travail plus rapide et efficace. </p>
   </div> -->
-  <div class="form">
-      <form action="" >
+    <div class="form">
+      <form action="">
         <img src="../../assets/logo.png" alt="">
         <h3>Connectez-vous !</h3>
         <br>
-        <label for="">Email:</label><br>
-        <input type="text" name="email" [(ngModel)]="emailLogin" ><br>
-        <label for="" class="lab">Mot de passe:</label><br>
-        <input type="password" name="password" [(ngModel)]="PasswordLogin"><br><br>
-        <button type="submit" class="btn" (click)="login()">
+        <div class="mb-3">
+          <label for="" class="form-label">Email:<span class="etoile">*</span></label>
+          <input type="text" name="email" [(ngModel)]="emailLogin"
+            [ngClass]="{'is-valid': isEmailValid(), 'is-invalid': !isEmailValid() && isEmailDirty}" class="form-control"
+            id="email" (input)="setEmailDirty()">
+          <div *ngIf="!isEmailValid() && isEmailDirty" class="invalid-feedback">Format d'email invalide</div>
+        </div>
+        <div class="mb-3 between">
+          <label for="" class="lab form-label">Mot de passe:<span class="etoile">*</span></label>
+          <input type="password" name="password" [(ngModel)]="PasswordLogin"
+            [ngClass]="{'is-valid': isPasswordValid(), 'is-invalid': !isPasswordValid() && isPasswordDirty}"
+            class="form-control" id="password" (input)="setPasswordDirty()">
+          <div *ngIf="!isPasswordValid() && isPasswordDirty" class="invalid-feedback">Le mot de passe doit contenir au
+            moins 6
+            caractères</div>
+        </div>
+
+        <button type="submit" class="btn" (click)="login()" [disabled]="!isFormValid()">
           Se connecter
         </button>
         <br><br>
@@ -27,6 +41,6 @@
         <br>
       </form>
     </div>
-</div>
+  </div>
 
 </div>

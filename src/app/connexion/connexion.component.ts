@@ -11,6 +11,8 @@ import { AuthserviceService } from '../Services/ServicesAuth/auth-service.servic
 export class ConnexionComponent implements OnInit {
   emailLogin: any = '';
   PasswordLogin: any = '';
+  isEmailDirty: boolean = false;
+  isPasswordDirty: boolean = false;
 
   constructor(private serviceAuth: AuthserviceService, private route: Router) {}
 
@@ -32,6 +34,36 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
+  // validation automatique des champs
+
+  isEmailValid(): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(this.emailLogin);
+  }
+
+  isPasswordValid(): boolean {
+    // Vérification de la longueur du mot de passe et l'absence d'espaces
+    return this.PasswordLogin.length >= 6 && !/\s/.test(this.PasswordLogin);
+  }
+
+  setEmailDirty() {
+    this.isEmailDirty = true;
+    if (this.emailLogin === '') {
+      this.isEmailDirty = false;
+    }
+  }
+
+  setPasswordDirty() {
+    this.isPasswordDirty = true;
+    if (this.PasswordLogin === '') {
+      this.isPasswordDirty = false;
+    }
+  }
+
+  isFormValid(): boolean {
+    return this.isEmailValid() && this.isPasswordValid();
+  }
+
   login() {
     console.log('ça marche');
     if (this.emailLogin == '' || this.PasswordLogin == '') {
@@ -45,23 +77,23 @@ export class ConnexionComponent implements OnInit {
       // Validation du format de l'email
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(this.emailLogin)) {
-        Swal.fire({
-          icon: 'error',
-          title: "Format d'email invalide",
-          position: 'center',
-          showConfirmButton: true,
-        });
+        // Swal.fire({
+        //   icon: 'error',
+        //   title: "Format d'email invalide",
+        //   position: 'center',
+        //   showConfirmButton: true,
+        // });
         return;
       }
 
       // Validation de l'espacement du mot de passe
       if (this.PasswordLogin.length < 6) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Le mot de passe doit contenir au moins 6 caractères',
-          position: 'center',
-          showConfirmButton: true,
-        });
+        // Swal.fire({
+        //   icon: 'error',
+        //   title: 'Le mot de passe doit contenir au moins 6 caractères',
+        //   position: 'center',
+        //   showConfirmButton: true,
+        // });
         return;
       }
 
@@ -83,7 +115,8 @@ export class ConnexionComponent implements OnInit {
               position: 'center',
               icon: 'success',
               title: 'Bienvenue Connecté avec succès',
-              showConfirmButton: true,
+              showConfirmButton: false,
+              timer: 1500,
             });
 
             // stocker nos infos de la requête dans notre localstorage
@@ -105,10 +138,10 @@ export class ConnexionComponent implements OnInit {
               localStorage.setItem('isPrestataire', JSON.stringify(true));
               this.route.navigate(['/prestataire']);
             } else {
-             localStorage.setItem('isAdmin', JSON.stringify(false));
-             localStorage.setItem('isClient', JSON.stringify(true));
-             localStorage.setItem('isPrestataire', JSON.stringify(false));
-             this.route.navigate(['/']);
+              localStorage.setItem('isAdmin', JSON.stringify(false));
+              localStorage.setItem('isClient', JSON.stringify(true));
+              localStorage.setItem('isPrestataire', JSON.stringify(false));
+              this.route.navigate(['/']);
             }
           }
         }
