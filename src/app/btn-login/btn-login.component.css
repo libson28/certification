@@ -62,14 +62,15 @@
   border-radius: 5px;
   padding: 10px;
   right: 0;
-  top: 40px;
+  top: 43px;
+  height: 10rem !important;
 }
 
 .dropdown-content a {
   display: block;
   color: #333;
   text-decoration: none;
-  padding: 8px;
+  padding: 7px;
   transition: background-color 0.3s;
 }
 
@@ -87,8 +88,7 @@ button i {
   color: #001D3D;
 }
 
-
-
 .dropdown-content a{
   cursor: pointer;
+  margin-top: 25px;
 }

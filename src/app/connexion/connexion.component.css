@@ -194,5 +194,9 @@ form {
 
 .etoile
 {
-  color: red;
+ display: none;
+}
+
+input{
+  padding-left: 5px;
 }

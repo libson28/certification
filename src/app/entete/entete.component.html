@@ -1,4 +1,4 @@
-<header class="header">
+<!-- <header class="header">
   <div class="bleu">
     <p>Bienvenue dans la plateforme OUVRIER-EXPRESS</p>
     <ul>
@@ -33,4 +33,52 @@
 
 
 
+ -->
+<div class="bleu">
+  <p>Bienvenue dans la plateforme OUVRIER-EXPRESS</p>
+  <ul>
+    <li><i class="bi bi-facebook"></i></li>
+    <li><i class="bi bi-instagram"></i></li>
+    <li><i class="bi bi-twitter"></i></li>
+    <li><i class="bi bi-linkedin"></i></li>
+  </ul>
+</div>
+<div class="Navigation ">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" routerLink="/">
+        <img src="../../assets/logo.png" class="img-fluid" alt="">
+      </a>
+      <button class="navbar-toggler burger collapsed text-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navigationMenu" aria-controls="navigationMenu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class=""><i class="fa-solid fa-bars"></i></span>
+      </button>
 
+      <div class="navbar-collapse collapse " id="navigationMenu">
+        <ul class="navbar-nav mx-auto justify-content-center mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link" routerLinkActive="activeLink" routerLink="/">Accueil</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" routerLinkActive="activeLink" routerLink="/profils">Profils</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" routerLinkActive="activeLink" routerLink="/comment-ça-marche">Comment ça marche</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" routerLinkActive="activeLink" routerLink="/about">A propos</a>
+          </li>
+
+        </ul>
+        <!-- <app-login-user *ngIf="!isLoggedIn()"></app-login-user>
+        <app-logout-user *ngIf="isLoggedIn()"></app-logout-user> -->
+          <div class="btnConnect">
+            <app-btn-login></app-btn-login>
+          </div>
+
+      </div>
+
+    </div>
+  </nav>
+</div>

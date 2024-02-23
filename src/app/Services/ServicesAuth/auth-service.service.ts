@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthserviceService {
+  isLoggedIn(): boolean {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient) {}
 
   public urlBase = 'http://127.0.0.1:8000/api/';
@@ -25,7 +28,7 @@ export class AuthserviceService {
   addCategorie(PublierProfil: any): Observable<any> {
     return this.http.post(`${this.urlBase}ajouterCategorie`, PublierProfil);
   }
-  
+
 
   get(path: string, onSuccess: Function) {
     const httpOptions = {

@@ -1,48 +1,44 @@
-.categorie
- ul
-{
+.categorie ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-.filtre{
+.filtre {
   margin-top: 3rem;
   margin-left: 3rem;
 }
 
-.filtre h2{
+.filtre h2 {
   padding-left: 2rem;
   padding-bottom: 15px;
 }
 
-li button{
-  box-shadow: rgba(75, 75, 75, 0.02) 0px 1px 3px 0px, rgba(93, 93, 93, 0.15) 0px 0px 0px 1px;
+li button {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 8px 15px;
   font-size: 18px;
   font-weight: 550;
 }
 
-input{
+input {
   padding: 7px 30px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
-.srch
-{
+.srch {
   padding-bottom: 20px;
   display: flex;
   justify-content: flex-end;
 }
 
-.card{
+.card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   text-align: center;
   background-color: #fefefe;
 }
 
-.card img
-{
+.card img {
   width: 120px;
   height: 130px;
   border-radius: 50%;
@@ -63,19 +59,19 @@ button.active {
   color: #ffffff;
   /* Couleur du texte pour le bouton actif */
 }
-.fond-btn
-{
+
+.fond-btn {
   color: #ffffff;
   background-color: #060733;
 }
 
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
 
-.pagination i{
+.pagination i {
   color: #060733;
   font-size: 1.5rem;
 }

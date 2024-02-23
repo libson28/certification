@@ -65,11 +65,11 @@
         </div>
         <div class="col">
           <label>Confirmer mot de passe<span class="etoile">*</span></label><br>
-          <input type='password' name='ConfPassword' class='lnc' autocomplete="current-password"
+          <input type='password' name='ConfPassword' class='lnc' autocomplete="current-password" [(ngModel)]="ConfPassword"
             [ngClass]="{'is-valid': isFieldValid('ConfPassword'), 'is-invalid': !isFieldValid('ConfPassword') && isFieldDirty('password')}"
-            (input)="setFieldDirty('password')">
-          <div *ngIf="!isFieldValid('password') && isFieldDirty('password')" class="invalid-feedback">
-            Le mot de passe doit contenir au moins 6 caractères sans espaces.
+            (input)="SetFieldDirty('password')">
+          <div *ngIf="!isFieldValid('ConfPassword') && isFieldDirtyz('password')" class="invalid-feedback">
+            Les mots de passe ne correspondent pas.
           </div>
         </div>
         </div>

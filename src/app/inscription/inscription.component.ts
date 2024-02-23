@@ -13,6 +13,7 @@ export class InscriptionComponent {
   nom: string = '';
   email: string = '';
   password: string = '';
+  ConfPassword: string = '';
   profil: string = '';
   tel: string = '';
   adress: string = '';
@@ -37,6 +38,31 @@ export class InscriptionComponent {
     }
   }
 
+  isFieldDirtyz(fieldName: string): boolean {
+    if (fieldName === 'ConfPassword') {
+      return this.fieldDirty[fieldName] || false;
+    }
+
+    return this.fieldDirty[fieldName] || false;
+  }
+
+  SetFieldDirty(fieldName: string): void {
+    if (fieldName === 'ConfPassword') {
+      this.fieldDirty[fieldName] = true;
+    } else {
+      this.fieldDirty[fieldName] = true;
+
+      // Reset fieldDirty flag when the corresponding field is empty
+      if ((this as any)[fieldName] === '') {
+        this.fieldDirty[fieldName] = false;
+      }
+    }
+  }
+
+  // ------------
+
+  // ----------
+
   isFieldValid(fieldName: string): boolean {
     switch (fieldName) {
       case 'prenom':
@@ -48,6 +74,8 @@ export class InscriptionComponent {
         return emailPattern.test(this.email);
       case 'password':
         return this.password.length >= 6 && !/\s/.test(this.password);
+      case 'ConfPassword':
+        return this.password === this.ConfPassword;
       case 'profil':
         return this.profil.trim().length > 0;
       case 'tel':

@@ -1,8 +1,8 @@
-*{
+* {
   font-family: 'Times New Roman', Times, serif;
 }
-.bande
-{
+
+.bande {
   background-color: #001D3D;
   width: 100%;
   height: 7rem;
@@ -10,7 +10,7 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.cntt{
+.cntt {
   display: flex;
   justify-content: flex-end;
   gap: 44rem;
@@ -18,15 +18,15 @@
   /* flex-wrap: wrap; */
 }
 
-.info p{
+.info p {
   color: rgb(161, 161, 161);
 }
 
-.info{
+.info {
   padding-left: 15px;
 }
 
-.appel ul{
+.appel ul {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
@@ -38,7 +38,7 @@ ul li {
   padding: 0 10px;
 }
 
-ul li .mail{
+ul li .mail {
   background-color: #fff;
   color: black;
   padding: 8px 17px;
@@ -47,7 +47,7 @@ ul li .mail{
   box-shadow: rgba(173, 173, 173, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-ul li .mail:hover{
+ul li .mail:hover {
   background-color: #d5d5d5;
   color: black;
   padding: 8px 17px;
@@ -55,294 +55,423 @@ ul li .mail:hover{
   box-shadow: rgba(173, 173, 173, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-ul li .whatsapp{
+ul li .whatsapp {
   background-color: #54a719;
-    color: rgb(255, 255, 255);
-    padding: 8px 17px;
-    border-radius: 8px;
-    box-shadow: rgba(173, 173, 173, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  color: rgb(255, 255, 255);
+  padding: 8px 17px;
+  border-radius: 8px;
+  box-shadow: rgba(173, 173, 173, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.profil img{
-  width: 200px;
-  height: 200px;
+.profil img {
+  width: 200px !important;
+  height: 165px !important;
   padding-left: 2rem;
   margin-top: -5.5rem;
 }
 
-.info, .appel{
+.info,
+.appel {
   margin-top: 22px;
 }
 
 /* Responsivité bande bleu  */
 @media screen and (max-width: 1400px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 40rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 40rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1379px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 35rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 35rem;
+    place-items: center;
+  }
 }
+
 @media screen and (max-width: 1290px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 32rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 32rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1227px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 30rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 30rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1190px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 27rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 27rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1130px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 24rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 24rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 1095px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 23rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1075px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 22rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 22rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 1075px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 20rem;
+    place-items: center;
+  }
 
-    .profil img {
-      width: 15%;
-      padding-left: 2rem;
-      margin-top: -5rem;
-    }
+
+}
+
+@media screen and (max-width: 1030px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 17rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 996px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 18.5rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 17.5rem;
+    place-items: center;
+  }
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 940px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 16rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 13.5rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14.5rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 925px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 14.5rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 14.5rem;
+    place-items: center;
+  }
 }
 
-@media screen and (max-width: 896px) {
+@media screen and (max-width: 932px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 12rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 13rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 916px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 11.5rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 897px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 11rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 882px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9rem;
+    place-items: center;
+  }
+}
+
+@media screen and (max-width: 853px) {
+  .cntt {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8.5rem;
+    place-items: center;
+  }
 }
 
 @media screen and (max-width: 848px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 9.5rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 7.5rem;
+    place-items: center;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 829px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8.5rem;
-      place-items: center;
-    }
+    display: flex;
+    justify-content: flex-end;
+    gap: 7rem;
+    place-items: center;
+  }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 819px) {
   .cntt {
-      display: flex;
-      justify-content: flex-end;
-      gap: 5rem;
-      place-items: center;
-    }
-
-        .profil img {
-          margin-top: -5rem;
-          width: 20%;
-          padding-left: 10px;
-
-        }
+    display: flex;
+    justify-content: flex-end;
+    gap: 6rem;
+    place-items: center;
+  }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 805px) {
   .cntt {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profil img {
+    width: 20%;
+    padding-left: 10px;
+
+  }
+
+  .appel ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+  }
+
+  .bande {
+    font-size: 15px;
+    height: 12rem;
+  }
+
+  .appel {
+    margin-top: -5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 700px) {
+  .profil img {
+    width: 210px !important;
+    height: 170px !important;
+    border-radius: 50%;
+    padding-left: 2.5rem;
+    margin-top: 2rem !important;
+
+  }
+
+  .profil, .detail{
+    display: flex;
+    justify-content: center;
+  }
+
+    .detail{
+      margin-top: -3rem;
+    }
+
+    .appel ul {
       display: flex;
       justify-content: center;
-      flex-direction: column;
     }
 
-.appel ul {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 0;
-}
-.bande{
-  font-size: 15px;
-  height: 12rem;
+  .cv{
+    margin-top: 2rem !important;
+  }
+
+    .cntt{
+      display: flex;
+      justify-content: center;
+      margin-left: -35px;
+    }
 }
 
-.appel{
-  margin-top: -5rem;
-}
-
-.profil img{
-  margin-top: -1.8rem;
-  width: 20%;
-
-}
-}
 
 @media screen and (max-width: 550px) {
   .cntt {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-.appel ul {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 0;
-}
-.bande{
-  font-size: 15px;
-  height: 12rem;
-}
+  .appel ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+  }
 
-.appel{
-  margin-top: -5rem;
-}
+  .bande {
+    font-size: 15px;
+    height: 12rem;
+  }
 
-.profil img{
-  margin-top: 0.5rem;
-  width: 15%;
-}
+  .appel {
+    margin-top: -5rem;
+  }
+
+
 }
 
-.cv{
+.cv {
   display: grid;
   grid-template-columns: 25% 65%;
-  padding:0 2rem;
+  padding: 0 2rem;
   gap: 4rem;
 }
 
-.detail{
+.detail {
   /* background-color: aquamarine; */
 }
 
-.contenu{
+.contenu {
   /* background-color: bisque; */
   margin-top: -6rem;
 }
 
-b{
+b {
   font-size: 20px;
   font-weight: 500;
   color: #001D3D;
 }
 
-.detail span{
+.detail span {
   padding-top: 5px;
 }
 
-h4{
+h4 {
   color: #001D3D;
   font-weight: 500;
 }
 
 @media screen and (max-width: 768px) {
-  .cv{
+  .cv {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: -3rem;
   }
 
-  .contenu{
+  .contenu {
     padding-top: 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .cv{
+  .cv {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: -5rem;
   }
 
-  .contenu{
+  .contenu {
     padding-top: 3rem;
   }
+
 }
 
-li button
-a
-{
+li button a {
   color: #fff;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
+.mail a {
+  color: #000;
+}
+
+
+@media screen and (max-width:768px) {
+  .cv {
+    padding-top: 4rem;
+  }
+}
+
+/* @media screen and (max-width:690px) {
+  .profil img {
+    width: 170px !important;
+    height: 145px !important;
+    padding-left: 2rem;
+    margin-top: -3rem;
+  }
+} */
+
 .mail a
 {
-  color: #000;
+  color: #000 !important;
 }
