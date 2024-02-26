@@ -29,6 +29,7 @@ import { StatistiqueComponent } from './DASHBOARD-ADMIN/CONTENU/statistique/stat
 import { BtnLoginComponent } from './btn-login/btn-login.component';
 import { AuthInterceptor } from './interceptors/interceptor';
 import { AuthserviceService } from './Services/ServicesAuth/auth-service.service';
+import { PageErreurComponent } from './page-erreur/page-erreur.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AuthserviceService } from './Services/ServicesAuth/auth-service.service
     GestionMessageComponent,
     StatistiqueComponent,
     BtnLoginComponent,
+    PageErreurComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

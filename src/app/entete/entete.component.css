@@ -230,6 +230,7 @@ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 .Navigation {
   /* border: 1px solid black; */
   background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 7px 20px;
   top: 0;
   position: sticky;
@@ -270,6 +271,9 @@ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: #001D3D;
   width: 100%;
   height: 35px;
+}
+.bleu p{
+ color: #001D3D;
 }
 
 .bleu ul {

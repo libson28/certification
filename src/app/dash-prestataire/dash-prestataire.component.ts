@@ -21,7 +21,8 @@ export class DashPrestataireComponent {
   categorie: string = '';
   public profiles: any[] = [];
   listePrestataire: any;
-  userConnect:any;
+  userConnect: any;
+  selectedPublication: any;
 
   constructor(
     private auth: AuthserviceService,
@@ -49,6 +50,20 @@ export class DashPrestataireComponent {
     });
   }
 
+  
+
+  // charger  les informations dans le formulaire
+  loadPublicationInfo(publication: any): void {
+    this.selectedPublication = publication;
+    this.metier = publication.nomService;
+    this.presentation = publication.presentation;
+    this.categorie = publication.categorie_id;
+    this.motivation = publication.motivation;
+    this.experience = publication.experience;
+    this.competence = publication.competence;
+  }
+
+
   // upload de l'image de profil
   getFile(event: any) {
     console.warn(event.target.files[0]);
@@ -65,6 +80,10 @@ export class DashPrestataireComponent {
     formData.append('motivation', this.motivation);
     formData.append('experience', this.experience);
     formData.append('competence', this.competence);
+
+    const publicationId = this.selectedPublication.id;
+
+
 
     this.publicationProfil.ajoutProfil(formData).subscribe(
       (response) => {

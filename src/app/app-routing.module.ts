@@ -20,21 +20,46 @@ import { AdminGuard, prestataireGuard, clientGuard } from './GUARD/guard';
 // import { StatistiqueComponent } from './statistique/statistique.component'
 
 const routes: Routes = [
-  { path: '', component: AccueilComponent },
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: 'accueil', component: AccueilComponent },
   { path: 'profils', component: ListeProfilComponent },
   { path: 'about', component: AproposComponent },
-  { path: 'client', component: DashClientComponent, canActivate:[clientGuard] },
-  { path: 'prestataire', component: DashPrestataireComponent, canActivate:[prestataireGuard] },
+  {
+    path: 'client',
+    component: DashClientComponent,
+    canActivate: [clientGuard],
+  },
+  {
+    path: 'prestataire',
+    component: DashPrestataireComponent,
+    canActivate: [prestataireGuard],
+  },
   { path: 'comment-ça-marche', component: GuideComponent },
   { path: 'login', component: ConnexionComponent },
   { path: 'signUp', component: InscriptionComponent },
-  { path: 'politique', component: PolitiqueConfiComponent  },
+  { path: 'politique', component: PolitiqueConfiComponent },
   { path: 'conditionDeUse', component: ConditionUseComponent },
   { path: 'faq', component: FAQComponent },
-  { path: 'category', component: GestionCategorieComponent , canActivate:[AdminGuard] },
-  { path: 'statistique', component: StatistiqueComponent, canActivate:[AdminGuard] },
-  { path: 'utilisateur', component: GestionUserComponent, canActivate:[AdminGuard] },
-  { path: 'messages', component: GestionMessageComponent, canActivate:[AdminGuard]  },
+  {
+    path: 'category',
+    component: GestionCategorieComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'statistique',
+    component: StatistiqueComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'utilisateur',
+    component: GestionUserComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'messages',
+    component: GestionMessageComponent,
+    canActivate: [AdminGuard],
+  },
   { path: 'detail/:id', component: EspaceOuvrierComponent },
   // { path: 'detail', component: EspaceOuvrierComponent },
 ];

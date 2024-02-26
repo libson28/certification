@@ -11,7 +11,14 @@ export class PublicationProfilService {
 
   constructor(private http: HttpClient) {}
 
-  ajoutProfil(publier:any): Observable<any> {
+  ajoutProfil(publier: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}ajoutPrestaService`, publier);
+  }
+
+  modifyProfil(publicationId: any, publier: any): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}modifPrestaService/${publicationId}`,
+      publier
+    );
   }
 }

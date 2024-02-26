@@ -381,7 +381,7 @@ form button:hover{
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #989898;
+  background-color: #343434;
   color: #fff;
 }
 
@@ -412,6 +412,32 @@ form button:hover{
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #fbfbfb;
 
+}
+
+input , textarea
+{
+  padding-left: 5px;
+}
+
+input.metierEdit{
+  padding-left: 5px;
+}
+
+.save
+{
+  background-color: #0b0733;
+  color: #fff;
+  padding: 8px 7px;
+  border-radius: 5px;
+}
+
+.modal-dialog
+{
+  background-color: #f5f5f5;
+}
+
+#exampleModall label{
+  padding-bottom: 5px;
 }
