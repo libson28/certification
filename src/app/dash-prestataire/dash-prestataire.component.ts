@@ -4,6 +4,8 @@ import { publication } from '../MODELS/publier.model';
 import Swal from 'sweetalert2';
 import { PublicationProfilService } from '../Services/publicationService/publication-profil.service';
 import { Router } from '@angular/router';
+import { UserService } from '../Services/userServices/user.service';
+import { ClientService } from '../Services/User/client.service';
 
 @Component({
   selector: 'app-dash-prestataire',
@@ -23,11 +25,16 @@ export class DashPrestataireComponent {
   listePrestataire: any;
   userConnect: any;
   selectedPublication: any;
+  nomClient: string = '';
+  prenomClient: string = '';
+  emailClient: string = '';
 
   constructor(
     private auth: AuthserviceService,
     private publicationProfil: PublicationProfilService,
-    private route: Router // private get
+    private route: Router,
+    private userService: UserService,
+    private clientService: ClientService
   ) {}
 
   userid: any;
@@ -41,6 +48,14 @@ export class DashPrestataireComponent {
     this.userConnect = useronline.user;
     console.log('voici le user connecter', useronline);
     console.log('voici lid du user connecter', this.userid);
+
+    this.clientService.clientInfo$.subscribe((clientInfo) => {
+      if (clientInfo) {
+        this.nomClient = clientInfo.nom;
+        this.prenomClient = clientInfo.prenom;
+        this.emailClient = clientInfo.email;
+      }
+    });
   }
 
   getCategories() {
@@ -50,19 +65,62 @@ export class DashPrestataireComponent {
     });
   }
 
-  
-
   // charger  les informations dans le formulaire
-  loadPublicationInfo(publication: any): void {
-    this.selectedPublication = publication;
-    this.metier = publication.nomService;
+  PublicationObject: any;
+  loadPublicationInfo(publication: any) {
+    // alert(publication.metier);
+    this.metier = publication.metier;
     this.presentation = publication.presentation;
     this.categorie = publication.categorie_id;
     this.motivation = publication.motivation;
     this.experience = publication.experience;
     this.competence = publication.competence;
+    this.PublicationObject = publication;
+    console.log('bonjour:', this.PublicationObject);
   }
 
+  //modification
+  updateProfil() {
+    const formData = new FormData();
+    formData.append('nomService', this.metier);
+    formData.append('presentation', this.presentation);
+    formData.append('categorie_id', this.categorie);
+    formData.append('motivation', this.motivation);
+    formData.append('experience', this.experience);
+    formData.append('competence', this.competence);
+    formData.append('image', this.image);
+    // if (this.image) {
+    // }
+
+    const profilId = this.tabPrestataireFilter[0].$prestataire_service_id;
+    console.log('profil id :', profilId);
+
+    this.publicationProfil.modifyProfil(profilId, formData).subscribe(
+      (response) => {
+        Swal.fire('Succès', 'Profil mis à jour avec succès.', 'success');
+        console.log('Profil mis à jour avec succès:', response);
+        this.getListePrestataire();
+        // Réinitialiser les valeurs des champs après la mise à jour réussie
+        this.metier = '';
+        this.presentation = '';
+        this.categorie = '';
+        this.motivation = '';
+        this.experience = '';
+        this.competence = '';
+        this.image = null;
+      },
+      (error) => {
+        Swal.fire(
+          'Erreur',
+          'Erreur lors de la mise à jour du profil. Veuillez réessayer.',
+          'error'
+        );
+        console.error('Erreur de mise à jour du profil:', error);
+      }
+    );
+  }
+
+  // fin modification
 
   // upload de l'image de profil
   getFile(event: any) {
@@ -82,8 +140,6 @@ export class DashPrestataireComponent {
     formData.append('competence', this.competence);
 
     const publicationId = this.selectedPublication.id;
-
-
 
     this.publicationProfil.ajoutProfil(formData).subscribe(
       (response) => {
@@ -130,7 +186,10 @@ export class DashPrestataireComponent {
       this.tabPrestataireFilter = this.listePrestataire.filter(
         (prestataire: any) => prestataire.id === this.userid
       );
-      console.log('la liste de tous les prestataire', reponse);
+      console.log(
+        'la liste de tous les prestataire',
+        this.tabPrestataireFilter[0].$prestataire_service_id
+      );
     });
   }
 

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   public urlBase = 'http://127.0.0.1:8000/api/';
+  userData$: any;
 
   constructor(private http: HttpClient) {}
 

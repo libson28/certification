@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthserviceService } from '../Services/ServicesAuth/auth-service.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../Services/User/user.service'
 
 @Component({
   selector: 'app-espace-ouvrier',
@@ -10,10 +11,14 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class EspaceOuvrierComponent {
   public profiles: any[] = [];
   listePrestataire: any[] = [];
+  UserOnline: any;
+  ouvrier: any;
 
   constructor(
     private auth: AuthserviceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService,
+    
   ) {}
 
   prestataire_id: any;

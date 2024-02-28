@@ -15,10 +15,7 @@ export class PublicationProfilService {
     return this.http.post<any>(`${this.apiUrl}ajoutPrestaService`, publier);
   }
 
-  modifyProfil(publicationId: any, publier: any): Observable<any> {
-    return this.http.post<any>(
-      `${this.apiUrl}modifPrestaService/${publicationId}`,
-      publier
-    );
+  modifyProfil(publicationId: any, formadata: FormData): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}modifPrestaService/${publicationId}`,formadata);
   }
 }

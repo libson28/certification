@@ -93,11 +93,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr  *ngIf="userConnect">
                   <th scope="row">1</th>
-                  <td>Moussa</td>
-                  <td>Diop</td>
-                  <td>moussadiop.com</td>
+                  <td>{{prenomClient}}</td>
+                  <td>{{ nomClient }}</td>
+                  <td>{{ emailClient }}</td>
                   <td>24/12/2023</td>
                 </tr>
                 <tr>
@@ -165,7 +165,7 @@
 
         <!-- ----------------------------------------------------------------------------- -->
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-          <!-- editer profil -->
+          <!-- Publication de profil -->
           <div class="formulair">
             <form action="">
               <label>&nbsp;&nbsp; Image</label>
@@ -229,10 +229,10 @@
                   <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">Modifier votre publication</h1>
                 </div>
                 <div class="modal-body">
-                  <form action="" class="editer">
+                  <form action="" class="editer" enctype="multipart/form-data">
                     <label>&nbsp;&nbsp; Image</label>
                     <div class="imgProfil ntn">
-                      <input type="file" value="" name="image"><br>
+                      <input type="file" value="" name="image" [(ngModel)]="image" (change)="getFile($event)"><br>
                     </div>
                     <br>
                     <div class="row row-cols-1 row-cols-md-2">
@@ -244,34 +244,33 @@
                           <option *ngFor="let categorie of categories" [value]="categorie.id">
                             {{categorie.libelleCategorie}}
                           </option>
-
                         </select>
                       </div>
 
                       <div class="col">
                         <label for="metier">Métier</label>
-                        <input type="text" name="metier" class="form-control metierEdit" placeholder=" Métier"
+                        <input type="text" name="metier" class="form-control metierEdit" placeholder=" Métier" [(ngModel)]="metier"
                           required="">
                       </div>
 
                       <div class="col">
                         <label for="description">Description</label>
-                        <textarea name="description" cols="77" rows="10" required=""></textarea>
+                        <textarea name="description" cols="77" rows="10" required="" [(ngModel)]="presentation"></textarea>
                       </div>
 
                       <div class="col">
                         <label for="competences">Compétences</label>
-                        <textarea name="competences" cols="77" rows="10" required=""></textarea>
+                        <textarea name="competences" cols="77" rows="10" required="" [(ngModel)]="competence"></textarea>
                       </div>
 
                       <div class="col">
                         <label for="experiences">Expériences</label>
-                        <textarea name="experiences" cols="77" rows="10" required=""></textarea>
+                        <textarea name="experiences" cols="77" rows="10" required="" [(ngModel)]="experience"></textarea>
                       </div>
 
                       <div class="col">
                         <label for="motivation">Motivation</label>
-                        <textarea name="motivation" cols="77" rows="10" required=""></textarea>
+                        <textarea name="motivation" cols="77" rows="10" required="" [(ngModel)]="motivation"></textarea>
                       </div>
                     </div>
 
@@ -279,14 +278,14 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                  <button type="button" class="save">Enregistrer</button>
+                  <button type="button" class="save" (click)="updateProfil()">Enregistrer</button>
                 </div>
               </div>
             </div>
           </div>
           <div class="container" *ngFor="let profile of tabPrestataireFilter">
             <div class="editing">
-              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModall">Modifier <i
+              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModall" (click)="loadPublicationInfo(profile)">Modifier <i
                   class="bi bi-pencil-square"></i>
               </button> &nbsp;
               <button class="deleteProfile">Supprimer <i class="bi bi-trash"></i></button>

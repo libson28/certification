@@ -58,7 +58,7 @@ export class ListeProfilComponent implements OnInit {
         this.tabProfileFilter = this.profiles;
       });
     } else {
-      this.auth.get('afficherprestataire/' + id, (reponse: any) => {
+      this.auth.get('listeCategoriePresta/' + id, (reponse: any) => {
         console.warn(reponse);
         this.profiles = reponse;
       });
