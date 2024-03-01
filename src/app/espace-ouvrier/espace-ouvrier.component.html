@@ -12,7 +12,7 @@
             <button class="mail" ><a href="mailto:{{userfound?.email}}">Envoyer un mail </a><i class="bi bi-envelope"></i></button>
           </li>
           <li>
-            <button class="whatsapp" ><a href="tel:{{userfound?.tel}}">whatsapp </a><i
+            <button class="whatsapp" (click)="onContactUsClick()"><a href="tel:{{userfound?.tel}}">whatsapp </a><i
                 class="bi bi-whatsapp color-white"></i></button>
           </li>
         </ul>

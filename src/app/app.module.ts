@@ -30,6 +30,9 @@ import { BtnLoginComponent } from './btn-login/btn-login.component';
 import { AuthInterceptor } from './interceptors/interceptor';
 import { AuthserviceService } from './Services/ServicesAuth/auth-service.service';
 import { PageErreurComponent } from './page-erreur/page-erreur.component';
+import { AjoutProfilService } from './Services/Ajout/ajout-profil.service';
+import { CategorieService } from './Services/catégorieService/categorie.service';
+import { ContactezNousService } from './Services/gestionMessage/contactez-nous.service';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { PageErreurComponent } from './page-erreur/page-erreur.component';
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
     AuthserviceService,
+    ContactezNousService,
+    AjoutProfilService,
+    CategorieService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { PublicationProfilService } from '../Services/publicationService/publication-profil.service';
 import { Router } from '@angular/router';
 import { UserService } from '../Services/userServices/user.service';
-import { ClientService } from '../Services/User/client.service';
 
 @Component({
   selector: 'app-dash-prestataire',
@@ -28,34 +27,34 @@ export class DashPrestataireComponent {
   nomClient: string = '';
   prenomClient: string = '';
   emailClient: string = '';
+  contactedClients: any[] = [];
 
   constructor(
     private auth: AuthserviceService,
     private publicationProfil: PublicationProfilService,
     private route: Router,
-    private userService: UserService,
-    private clientService: ClientService
+    private userService: AuthserviceService,
   ) {}
 
   userid: any;
   ngOnInit(): void {
+    const contactedClientsString = localStorage.getItem('contactedClients');
+
+    if (contactedClientsString) {
+      this.contactedClients = JSON.parse(contactedClientsString);
+    }
+
     this.getCategories();
     this.getlistePrestaService();
     this.getListePrestataire();
 
     let useronline = JSON.parse(localStorage.getItem('userOnline') || '');
     this.userid = useronline.user.id;
-    this.userConnect = useronline.user;
+    // this.userConnect = useronline.user;
     console.log('voici le user connecter', useronline);
     console.log('voici lid du user connecter', this.userid);
 
-    this.clientService.clientInfo$.subscribe((clientInfo) => {
-      if (clientInfo) {
-        this.nomClient = clientInfo.nom;
-        this.prenomClient = clientInfo.prenom;
-        this.emailClient = clientInfo.email;
-      }
-    });
+    this.getUser();
   }
 
   getCategories() {
@@ -191,6 +190,18 @@ export class DashPrestataireComponent {
         this.tabPrestataireFilter[0].$prestataire_service_id
       );
     });
+  }
+
+  getUser() {
+    this.userService.profilUser().subscribe(
+      (response) => {
+        console.log(response);
+        this.userConnect = response;
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
   }
 
   // deconnexion

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashClientComponent } from './dash-client.component';
+import { EnteteComponent } from '../entete/entete.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BtnLoginComponent } from '../btn-login/btn-login.component';
 
 describe('DashClientComponent', () => {
   let component: DashClientComponent;
@@ -8,7 +11,8 @@ describe('DashClientComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DashClientComponent]
+      declarations: [DashClientComponent, EnteteComponent,BtnLoginComponent],
+      imports:[HttpClientModule]
     });
     fixture = TestBed.createComponent(DashClientComponent);
     component = fixture.componentInstance;

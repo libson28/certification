@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GestionMessageComponent } from './gestion-message.component';
+import { NavbarComponent } from '../../Navbar/navbar/navbar.component';
+import { SidebarComponent } from '../../Sidebar/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GestionMessageComponent', () => {
   let component: GestionMessageComponent;
@@ -8,7 +11,8 @@ describe('GestionMessageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GestionMessageComponent]
+      declarations: [GestionMessageComponent, NavbarComponent, SidebarComponent],
+      imports:[HttpClientModule]
     });
     fixture = TestBed.createComponent(GestionMessageComponent);
     component = fixture.componentInstance;

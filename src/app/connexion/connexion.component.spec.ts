@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConnexionComponent } from './connexion.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('ConnexionComponent', () => {
   let component: ConnexionComponent;
@@ -8,7 +10,8 @@ describe('ConnexionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConnexionComponent]
+      declarations: [ConnexionComponent],
+      imports: [FormsModule,HttpClientModule],
     });
     fixture = TestBed.createComponent(ConnexionComponent);
     component = fixture.componentInstance;

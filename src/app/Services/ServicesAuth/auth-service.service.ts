@@ -29,6 +29,9 @@ export class AuthserviceService {
     return this.http.post(`${this.urlBase}ajouterCategorie`, PublierProfil);
   }
 
+  profilUser(): Observable<any> {
+    return this.http.post(`${this.urlBase}me`, "");
+  }
 
   get(path: string, onSuccess: Function) {
     const httpOptions = {
