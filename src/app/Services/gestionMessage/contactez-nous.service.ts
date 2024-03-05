@@ -9,12 +9,17 @@ import { Observable } from 'rxjs';
 export class ContactezNousService {
   private apiUrl = 'http://127.0.0.1:8000/api/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // ajout de message
   addMails(contact: contact): Observable<contact> {
     return this.http.post<contact>(`${this.apiUrl}ajoutMail`, contact);
   }
+
+  envoyerMail(contact: contact): Observable<contact> {
+    return this.http.post<contact>(`${this.apiUrl}ajoutMail`, contact);
+  }
+
 
 
   // recuperation des message

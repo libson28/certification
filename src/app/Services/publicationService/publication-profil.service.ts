@@ -14,8 +14,20 @@ export class PublicationProfilService {
   ajoutProfil(publier: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}ajoutPrestaService`, publier);
   }
-
+  testAjout(profil: any) {
+    return this.http.post('http://127.0.0.1:8000/api/ajoutPrestaService' , profil);
+  }
   modifyProfil(publicationId: any, formadata: FormData): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}modifPrestaService/${publicationId}`,formadata);
+    return this.http.post<any>(
+      `${this.apiUrl}modifPrestaService/${publicationId}`,
+      formadata
+    );
+  }
+
+  modifUserConnect(publicationId: any, profil:any): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}modifPresta/${publicationId}`,
+      profil
+    );
   }
 }

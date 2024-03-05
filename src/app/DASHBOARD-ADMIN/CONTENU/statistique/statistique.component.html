@@ -1,13 +1,13 @@
 <div class="dashbord">
-  <div class="section sidebar">
+  <div class="section sidebar " (click)="hello()" [ngClass]="{'isToClose':isWidthLarge==true}">
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="section">
+  <div class="section  " [ngClass]="{'isLarge':isWidthLarge==true}">
     <app-navbar></app-navbar>
 
     <!-- les statistiques -->
-    <div class="statistique">
+    <div class="statistique ">
       <!-- ------------------------------ -->
       <div class="bloc">
         <div class="icon-txt">
@@ -15,7 +15,7 @@
             <i class="bi bi-person-walking"></i>
           </div>
           <div>
-           <p><sup>+</sup>{{prestataires.length}} Prestataires</p>
+            <p><sup>+</sup>{{prestataires.length}} Prestataires</p>
           </div>
         </div>
       </div>
@@ -81,25 +81,25 @@
       </table>
     </div>
 
-  <div class="pagination mb-5" *ngIf="getItemsPage().length">
-    <div>
-      <div class="d-flex justify-content-end mb-2">
-        <button class="rounded-2 btnColor  mx-2" [disabled]="pageActuelle === 1"
-          (click)="pageActuelle = pageActuelle - 1">
-          <i class="bi bi-arrow-left-circle-fill me-2"></i>
-        </button>
-        <button class=" mx-2 page" *ngFor="let page of pages" (click)="pageActuelle = page">
-          <span class="pageActuelle fs-5" *ngIf="page===pageActuelle">{{page}}</span>
-          <span *ngIf="page != pageActuelle">{{page}}</span>
-          <!-- {{ page }} -->
-        </button>
-        <button class="rounded-2 btnColor mx-2" [disabled]="pageActuelle === totalPages"
-          (click)="pageActuelle = pageActuelle + 1">
-          <i class="bi bi-arrow-right-circle-fill"></i>
-        </button>
+    <div class="pagination mb-5" *ngIf="getItemsPage().length">
+      <div>
+        <div class="d-flex justify-content-end mb-2">
+          <button class="rounded-2 btnColor  mx-2" [disabled]="pageActuelle === 1"
+            (click)="pageActuelle = pageActuelle - 1">
+            <i class="bi bi-arrow-left-circle-fill me-2"></i>
+          </button>
+          <button class=" mx-2 page" *ngFor="let page of pages" (click)="pageActuelle = page">
+            <span class="pageActuelle fs-5" *ngIf="page===pageActuelle">{{page}}</span>
+            <span *ngIf="page != pageActuelle">{{page}}</span>
+            <!-- {{ page }} -->
+          </button>
+          <button class="rounded-2 btnColor mx-2" [disabled]="pageActuelle === totalPages"
+            (click)="pageActuelle = pageActuelle + 1">
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button>
+        </div>
       </div>
-    </div>
 
 
     </div>
-    </div>
+  </div>

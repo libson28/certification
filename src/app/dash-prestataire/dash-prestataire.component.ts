@@ -29,15 +29,23 @@ export class DashPrestataireComponent {
   emailClient: string = '';
   contactedClients: any[] = [];
 
+  prenom: string = '';
+  nom: string = '';
+  tel: string = '';
+
+  profilPublie: boolean = false;
+
   constructor(
     private auth: AuthserviceService,
     private publicationProfil: PublicationProfilService,
     private route: Router,
     private userService: AuthserviceService,
+    private userInfos: PublicationProfilService
   ) {}
 
   userid: any;
   ngOnInit(): void {
+
     const contactedClientsString = localStorage.getItem('contactedClients');
 
     if (contactedClientsString) {
@@ -128,22 +136,35 @@ export class DashPrestataireComponent {
   }
 
   ajoutProfil() {
-    alert(this.categorie);
+    // le user connecté
+    this.getUser();
+    console.log('utilisateur connecté:', this.userConnect);
+    // alert(this.categorie);
     let formData = new FormData();
-    formData.append('image', this.image);
-    formData.append('nomService', this.metier);
-    formData.append('presentation', this.presentation);
-    formData.append('categorie_id', this.categorie);
-    formData.append('motivation', this.motivation);
-    formData.append('experience', this.experience);
-    formData.append('competence', this.competence);
+    formData.set('image', this.image);
+    formData.set('nomService', this.metier);
+    formData.set('presentation', this.presentation);
+    formData.set('categorie_id', this.categorie);
+    formData.set('motivation', this.motivation);
+    formData.set('experience', this.experience);
+    formData.set('competence', this.competence);
+    formData.set('prestataire_id', this.userConnect.id);
+    // console.log(this.image);
+    // console.log(this.metier);
+    // console.log(this.presentation);
+    // console.log(this.competence);
+    // console.log(this.experience);
+    // console.log(this.motivation);
+    // console.log(this.categorie);
+    // console.log(this.userConnect.id);
+    // console.log(formData);
 
-    const publicationId = this.selectedPublication.id;
+    // const publicationId = this.selectedPublication.id;
 
-    this.publicationProfil.ajoutProfil(formData).subscribe(
-      (response) => {
+    this.publicationProfil.testAjout(formData).subscribe(
+      (reponse) => {
         Swal.fire('Succès', 'Profil publié avec succès.', 'success');
-        console.log('profil ajoutée avec succes:', response);
+        console.warn('profil ajoutée avec succes:', reponse);
 
         // Réinitialiser les valeurs des champs après l'ajout réussi
         this.metier = '';
@@ -153,6 +174,7 @@ export class DashPrestataireComponent {
         this.experience = '';
         this.competence = '';
         this.image = null;
+        this.profilPublie = true;
       },
       (error) => {
         Swal.fire(
@@ -195,13 +217,29 @@ export class DashPrestataireComponent {
   getUser() {
     this.userService.profilUser().subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.userConnect = response;
       },
       (err) => {
         console.log(err);
       }
-    )
+    );
+  }
+
+  modifUser() {
+    const user = {
+      prenom: this.prenom,
+      nom: this.nom,
+      telephone: this.tel,
+    };
+    this.userInfos.modifUserConnect(this.userConnect.id, user).subscribe(
+      (reponse) => {
+        console.log(reponse);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   // deconnexion

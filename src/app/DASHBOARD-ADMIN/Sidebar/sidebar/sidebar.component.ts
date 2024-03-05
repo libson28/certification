@@ -18,10 +18,21 @@ export class SidebarComponent {
 
   logout(): void {
     localStorage.removeItem('userOnline');
-     localStorage.setItem('isAdmin', JSON.stringify(false));
-     localStorage.setItem('isClient', JSON.stringify(false));
-     localStorage.setItem('isPrestataire', JSON.stringify(false));
+    localStorage.setItem('isAdmin', JSON.stringify(false));
+    localStorage.setItem('isClient', JSON.stringify(false));
+    localStorage.setItem('isPrestataire', JSON.stringify(false));
     this.router.navigate(['/']);
+  }
+
+  deconnecte() {
+    localStorage.removeItem('userOnline');
+    this.router.navigate(['/']);
+  }
+
+  isSidebarOpen = true;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }
 

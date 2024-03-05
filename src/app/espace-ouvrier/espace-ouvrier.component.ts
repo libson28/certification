@@ -40,9 +40,7 @@ export class EspaceOuvrierComponent {
   }
 
   onContactUsClick(): void {
-    // Access this.connectedClient to get the client information
     if (this.connectedClient) {
-      // Call a function or service to handle the "Contactez-nous" action
       this.handleContactUsAction(this.connectedClient);
     } else {
       console.log('Client information not available.');
@@ -50,7 +48,6 @@ export class EspaceOuvrierComponent {
   }
 
   handleContactUsAction(clientDetails: any): void {
-    // Retrieve existing contactedClients array from localStorage
     const contactedClientsString = localStorage.getItem('contactedClients');
     let contactedClients: any[] = [];
 
@@ -100,4 +97,10 @@ export class EspaceOuvrierComponent {
   //     console.log('utilisateur non trouver');
   //   }
   // }
+
+
+
+
+  // enregistrer le prestataire cliqué
+  
 }

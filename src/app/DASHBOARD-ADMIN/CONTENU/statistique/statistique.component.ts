@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/Services/userServices/user.service';
 
-
 interface User {
   id: number;
   nom: string;
@@ -21,6 +20,7 @@ export class StatistiqueComponent {
   public users: User[] = [];
   public clients: any[] = [];
   public prestataires: any[] = [];
+  public isWidthLarge = false;
   // public users: User[] = [];
 
   tabUserFilter: any[] = [];
@@ -31,6 +31,10 @@ export class StatistiqueComponent {
 
   ngOnInit(): void {
     this.getAllUsers();
+  }
+  hello() {
+    // alert('hello');
+    this.isWidthLarge = !this.isWidthLarge;
   }
 
   getAllUsers() {
@@ -47,7 +51,7 @@ export class StatistiqueComponent {
     });
   }
 
-  itemsParPage = 5;
+  itemsParPage = 7;
   pageActuelle = 1;
 
   // Pagination

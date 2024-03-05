@@ -1,4 +1,16 @@
-.pageActuelle
-{
+.pageActuelle {
   color: darkorange;
+}
+
+
+.isLarge {
+  width: 1450px !important;
+  margin: 0 auto !important;
+  transition: ease 1s !important;
+}
+
+.isToClose {
+  /* margin: 0 auto !important; */
+  width: 0px !important;
+  transition: ease 1s !important;
 }

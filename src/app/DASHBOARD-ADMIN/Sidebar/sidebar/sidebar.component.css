@@ -10,10 +10,62 @@
   top: 0;
   left: 0;
   width: 18.5%;
-
+  transition: left 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-a img{
+.sidebar.visible {
+  left: 0;
+}
+
+/* Ajout de styles pour le bouton burger */
+#burger-btn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #001D3D;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* Assurez-vous que le bouton burger est au-dessus du contenu */
+}
+
+#burger-btn:hover {
+  background-color: #ff9500;
+}
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    display: none;
+    padding: 2vh;
+    width: 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+  }
+
+  #burger-btn {
+    display: block;
+  }
+
+  .link {
+    display: none;
+  }
+
+  .sidebar img {
+    width: 100%;
+  }
+
+  .sidebar.visible {
+    display: block;
+  }
+}
+
+a img {
   width: 50%;
   background-color: #fff;
   padding: 7px 15px;
@@ -79,24 +131,24 @@ ul li a {
   }
 }
 
+.deconnection {
+  margin-top: -3rem;
+}
 
-.deconnection
- button
-{
-  bottom:  0;
+.deconnection button {
+  bottom: 0;
   background-color: #02092e;
   color: white;
   margin: 0 auto;
   width: 100%;
 }
 
-.deconnection button:hover{
+.deconnection button:hover {
   background-color: #ff9500;
 }
 
 
-li a
-{
+li a {
   font-size: 16px !important;
 }
 
@@ -105,5 +157,35 @@ li a
   background-color: #ff9500;
   padding: 15px 15px;
   border-radius: 5px;
-  /* Remplacez par la couleur de fond souhaitée */
 }
+
+.tete {
+  display: flex;
+  gap: 10px;
+}
+
+.menu i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.sidebar.hidden {
+  left: -18.5%;
+}
+
+#menu {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #001D3D;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* #menu:hover {
+  background-color: #ff9500;
+} */

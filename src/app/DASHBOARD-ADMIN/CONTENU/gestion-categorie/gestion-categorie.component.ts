@@ -18,7 +18,7 @@ export class GestionCategorieComponent {
   constructor(
     private categorieService: CategorieService,
     private auth: AuthserviceService,
-    private deleteCategpry: CategorieService
+    private deleteCategpry: CategorieService,
   ) {}
 
   onSubmit() {
@@ -130,4 +130,6 @@ export class GestionCategorieComponent {
   get totalPages(): number {
     return Math.ceil(this.categories.length / this.itemsParPage);
   }
+
+
 }
