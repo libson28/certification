@@ -63,7 +63,7 @@
   padding: 10px;
   right: 0;
   top: 43px;
-  height: 10rem !important;
+  height: 8rem !important;
 }
 
 .dropdown-content a {
@@ -90,5 +90,5 @@ button i {
 
 .dropdown-content a{
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 10px;
 }

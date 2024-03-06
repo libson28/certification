@@ -294,3 +294,13 @@ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 .btnConnect {
   margin-top: 22px;
 }
+
+@media screen and (max-width: 870px) {
+  .logo img {
+    width: 150px;
+  }
+
+  ul li a {
+    font-size: 15px !important;
+  }
+}

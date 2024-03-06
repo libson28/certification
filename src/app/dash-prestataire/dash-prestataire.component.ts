@@ -45,6 +45,8 @@ export class DashPrestataireComponent {
 
   userid: any;
   ngOnInit(): void {
+    // this.ajoutProfil();
+    // this.updateProfil();
 
     const contactedClientsString = localStorage.getItem('contactedClients');
 

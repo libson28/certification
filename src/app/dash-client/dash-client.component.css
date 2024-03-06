@@ -100,13 +100,14 @@
 
  } */
 
- /* .imgProfil img {
-   width: 120px !important;
-   height: 130px !important;
-   border-radius: 50% !important;
+ .imgProfil img {
+   width: 230px !important;
+   height: 230px !important;
+   margin: 0 auto;
+  border-radius: 50%;
    margin-top: 1.5rem;
    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
- } */
+ }
 
 
  /* .sidebar {

@@ -460,6 +460,10 @@ textarea {
     gap: 20px;
   }
 
+  form h3{
+    display: none;
+  }
+
   .champs {
     width: 80%;
     margin: 0 auto;
