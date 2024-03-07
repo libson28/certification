@@ -45,18 +45,15 @@ export class DashPrestataireComponent {
 
   userid: any;
   ngOnInit(): void {
-    // this.ajoutProfil();
-    // this.updateProfil();
+    this.getCategories();
+    this.getlistePrestaService();
+    this.getListePrestataire();
 
     const contactedClientsString = localStorage.getItem('contactedClients');
 
     if (contactedClientsString) {
       this.contactedClients = JSON.parse(contactedClientsString);
     }
-
-    this.getCategories();
-    this.getlistePrestaService();
-    this.getListePrestataire();
 
     let useronline = JSON.parse(localStorage.getItem('userOnline') || '');
     this.userid = useronline.user.id;
@@ -108,7 +105,22 @@ export class DashPrestataireComponent {
       (response) => {
         Swal.fire('Succès', 'Profil mis à jour avec succès.', 'success');
         console.log('Profil mis à jour avec succès:', response);
-        this.getListePrestataire();
+        // this.getListePrestataire();
+        this.auth.get('listePrestaService', (reponse: any) => {
+          this.listeprestataire = reponse;
+          console.log('la reponse', reponse[0].$prestataire_service_id);
+
+          this.tabPrestataireFilter = this.listePrestataire.filter(
+            (prestataire: any) => prestataire.id === this.userid
+          );
+          console.log(
+            'la liste de tous les prestataire',
+            this.tabPrestataireFilter
+          );
+          console.log("l'id du user", this.userid)
+        });
+        // console.log('le nouveau tableau', this.tabPrestataireFilter);
+        // this.getlistePrestaService();
         // Réinitialiser les valeurs des champs après la mise à jour réussie
         this.metier = '';
         this.presentation = '';

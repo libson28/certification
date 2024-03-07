@@ -475,3 +475,12 @@ a {
 {
   color: #000 !important;
 }
+
+.contenu p
+{
+  font-size: 18px;
+}
+.contenu h4
+{
+  font-size: 26px;
+}
